@@ -1,0 +1,2108 @@
+{
+  "start_url": "http://192.168.1.24/MarakiReports2012/index.php",
+  "pages": {
+    "http://192.168.1.24/MarakiReports2012/index.php": {
+      "title": "MarakiErp Reports",
+      "depth": 0,
+      "found_on": null,
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=ALL",
+          "text": "ALL"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=FAV",
+          "text": "Favorite"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=CUSTOM",
+          "text": "Custom"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=Sales%20and%20Customers",
+          "text": "Sales and Customers"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=Purchases%20and%20Suppliers",
+          "text": "Purchases and Suppliers"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=Inventory",
+          "text": "Inventory"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/home.php?category=Banking%20and%20Cash",
+          "text": "Banking and Cash"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "Customer Aging Receivable"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "Customer Log List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "Customer Transaction Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "Customer Transactions List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "Customers List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "ERCA Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "Order By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "Order Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "Order Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "Order Report By User Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "Sales Category Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "Sales Credit By Customer Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "Sales Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "Sales Detail Report With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "Sales Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "Sales Report By Agent Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "Sales Report By Customer Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "Sales Report By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "Sales Report By Sales Rep Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "Sales Return Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "Sales Return Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "Sales Return Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "Sales Summary By Category Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "Sales Summary By Item sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "Sales Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "Sales Summary By Payment Type"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "Z summary transaction"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "Z-Sales Summary By Level Item Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "Adjustment Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "Company - COGS Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "Company - COGS Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "Company - Fast Moving Items By Quantity Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "Company - Fast Moving Items By Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "Company - On Hand Inventory"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "Company - Stock Movement"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "Inventory Batch Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "Inventory Item Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "Inventory Item Quantity Vs Physical Count"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "Inventory Item Quantity Vs Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "Item Batch Expiration"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "Item Store Batch QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "Item Store QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "Items List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "stock Issue And Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "Store Valuation Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "Transfer Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "Transfer Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "Transfer Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "Purchase Category Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "Purchase Category Summary By Item"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "Purchase Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "Purchase Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "Purchase Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "Supplier List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "Bank Balance"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "Bank Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "Cash Accounts Activity"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "Cash On Hand Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "Cash Reciepts"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "Deposits"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "Payments"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=ALL": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "Customer Aging Receivable"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "Customer Log List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "Customer Transaction Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "Customer Transactions List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "Customers List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "ERCA Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "Order By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "Order Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "Order Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "Order Report By User Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "Sales Category Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "Sales Credit By Customer Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "Sales Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "Sales Detail Report With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "Sales Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "Sales Report By Agent Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "Sales Report By Customer Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "Sales Report By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "Sales Report By Sales Rep Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "Sales Return Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "Sales Return Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "Sales Return Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "Sales Summary By Category Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "Sales Summary By Item sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "Sales Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "Sales Summary By Payment Type"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "Z summary transaction"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "Z-Sales Summary By Level Item Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "Adjustment Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "Company - COGS Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "Company - COGS Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "Company - Fast Moving Items By Quantity Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "Company - Fast Moving Items By Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "Company - On Hand Inventory"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "Company - Stock Movement"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "Inventory Batch Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "Inventory Item Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "Inventory Item Quantity Vs Physical Count"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "Inventory Item Quantity Vs Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "Item Batch Expiration"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "Item Store Batch QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "Item Store QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "Items List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "stock Issue And Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "Store Valuation Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "Transfer Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "Transfer Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "Transfer Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "Purchase Category Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "Purchase Category Summary By Item"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "Purchase Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "Purchase Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "Purchase Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "Supplier List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "Bank Balance"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "Bank Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "Cash Accounts Activity"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "Cash On Hand Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "Cash Reciepts"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "Deposits"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "Payments"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=FAV": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "Order By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "Order Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "Order Report By User Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "Sales Credit By Customer Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "Sales Detail Report With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "Sales Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "Sales Report By Agent Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "Sales Report By Customer Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "Sales Report By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "Sales Report By Sales Rep Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "Inventory Item Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "Purchase Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=CUSTOM": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing.php",
+          "text": "Daily Closing"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing.php",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_by_invoice.php",
+          "text": "Daily Closing By Invoice"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_by_invoice.php",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_date_range.php",
+          "text": "Daily Closing By Range"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_date_range.php",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=Sales%20and%20Customers": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "Customer Aging Receivable"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "Customer Log List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "Customer Transaction Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "Customer Transactions List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "Customers List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "ERCA Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "Order By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "Order Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "Order Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "Order Report By User Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "Report 1"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "Sales Category Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "Sales Credit By Customer Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "Sales Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "Sales Detail Report With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "Sales Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "Sales Report By Agent Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "Sales Report By Customer Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "Sales Report By Sales Rep Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "Sales Report By Sales Rep Summary 2"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "Sales Return Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "Sales Return Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "Sales Return Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "Sales Summary By Category Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "Sales Summary By Item sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "Sales Summary By Item Sold With Totals"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "Sales Summary By Payment Type"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "Z summary transaction"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "Z-Sales Summary By Level Item Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=Purchases%20and%20Suppliers": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "Purchase Category Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "Purchase Category Summary By Item"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "Purchase Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "Purchase Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "Purchase Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "Supplier List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=Inventory": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "Adjustment Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "Company - COGS Detail"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "Company - COGS Summary"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "Company - Fast Moving Items By Quantity Sold"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "Company - Fast Moving Items By Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "Company - On Hand Inventory"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "Company - Stock Movement"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "Inventory Batch Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "Inventory Item Bin Card"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "Inventory Item Quantity Vs Physical Count"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "Inventory Item Quantity Vs Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "Item Batch Expiration"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "Item Store Batch QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "Item Store QSB"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "Items List"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "stock Issue And Value"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "Store Valuation Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "Transfer Detail Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "Transfer Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "Transfer Summary By Item Report"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/home.php?category=Banking%20and%20Cash": {
+      "title": "Report Home",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": [
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "Bank Balance"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "Bank Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "Cash Accounts Activity"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "Cash On Hand Transactions"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "Cash Reciepts"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "Deposits"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028",
+          "text": "(new)"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "Payments"
+        },
+        {
+          "url": "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029",
+          "text": "(new)"
+        }
+      ]
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000055": {
+      "title": "Customer Aging Receivable",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000006": {
+      "title": "Customer Log List",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000013": {
+      "title": "Customer Transaction Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000057": {
+      "title": "Customer Transactions List",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000013": {
+      "title": "Customer List",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000040": {
+      "title": "ERCA Report 1",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000001": {
+      "title": "Order By Sales Rep Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000002": {
+      "title": "Order Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000003": {
+      "title": "Order Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000004": {
+      "title": "Order Report By User Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000039": {
+      "title": "PO Delete",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000035": {
+      "title": "Report 1",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000058": {
+      "title": "Sales Category Summary By Item Sold With Totals",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000007": {
+      "title": "Sales Credit By Customer Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000002": {
+      "title": "Sales Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000008": {
+      "title": "Sales Detail Report With Totals",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001": {
+      "title": "Sales Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000024": {
+      "title": "Sales Report By Agent Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000037": {
+      "title": "Sales Report By Customer Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000009": {
+      "title": "Sales Report By Sales Rep Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000036": {
+      "title": "Sales Report By Sales Rep Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000010": {
+      "title": "Sales Return Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000011": {
+      "title": "Sales Return Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000012": {
+      "title": "Sales Return Summary By Item Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000008": {
+      "title": "Sales Summary By Category Sold",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053": {
+      "title": "Sales Summary By Item sold",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000051": {
+      "title": "Sales Summary By Item Sold With Totals",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000007": {
+      "title": "Sales Summary By Payment Type",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000004": {
+      "title": "Z summary transaction",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary02.php?sel_report_ID=001-07-0000000005": {
+      "title": "Sales Detail Summary By Item",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000020": {
+      "title": "Adjustment Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000050": {
+      "title": "COGS Detail",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000033": {
+      "title": "Company 1 - COGS",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000034": {
+      "title": "Fast Moving Items By Quantity Sold",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000035": {
+      "title": "Fast Moving Items By Amount",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000036": {
+      "title": "On Hand Inventory",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000038": {
+      "title": "Company - Stock Movement",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000043": {
+      "title": "Inventory Batch Bin Card",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000019": {
+      "title": "Inventory Item Bin Card",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000027": {
+      "title": "Inventory Item Quantity Balance In Stores",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000018": {
+      "title": "Inventory Item Quantity Balance In Stores",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000040": {
+      "title": "Item Batch Expiration",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000041": {
+      "title": "Item Store Batch QSB",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000042": {
+      "title": "Item Store QSB",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000039": {
+      "title": "Item List",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000054": {
+      "title": "stock Issue And Value",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000037": {
+      "title": "Store Valuation Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000021": {
+      "title": "Transfer Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000022": {
+      "title": "Transfer Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000023": {
+      "title": "Transfer Summary By Item Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000005": {
+      "title": "Purchase Category Summary",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000006": {
+      "title": "Purchase Category Summary By Item",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000014": {
+      "title": "Purchase Detail Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000015": {
+      "title": "Purchase Report",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000016": {
+      "title": "MasterReportSummary03",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000017": {
+      "title": "Supplier List",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-01-0000000038": {
+      "title": "Bank Balance",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000024": {
+      "title": "Bank Transactions",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000025": {
+      "title": "Cash Accounts Activity",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000026": {
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "error": "load_failed",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000027": {
+      "title": "Cash Reciepts",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000028": {
+      "title": "Deposits",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000029": {
+      "title": "Payments",
+      "depth": 1,
+      "found_on": "http://192.168.1.24/MarakiReports2012/index.php",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing.php": {
+      "depth": 2,
+      "found_on": "http://192.168.1.24/MarakiReports2012/home.php?category=CUSTOM",
+      "error": "load_failed",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_by_invoice.php": {
+      "depth": 2,
+      "found_on": "http://192.168.1.24/MarakiReports2012/home.php?category=CUSTOM",
+      "error": "load_failed",
+      "links": []
+    },
+    "http://192.168.1.24/MarakiReports2012/reports/custom/daily_closing_date_range.php": {
+      "title": "Daily Closing By Date",
+      "depth": 2,
+      "found_on": "http://192.168.1.24/MarakiReports2012/home.php?category=CUSTOM",
+      "links": []
+    }
+  },
+  "external_links": {},
+  "file_links": {},
+  "unvisited_queue": []
+}

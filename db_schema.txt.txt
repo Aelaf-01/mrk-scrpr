@@ -1,0 +1,278 @@
+-- =====================================================================
+-- Senay Higher Clinic - billing / visit schema (PostgreSQL)
+-- Derived from: ERCA Report 1, Sales Report, Sales by Sales Rep Summary,
+--               Sales Summary by Item Sold  (report date 2026-09-29)
+--
+-- Key findings from the data that shaped the design
+--  * "Item ID" (e.g. 18s2) = <catalog item no. 18><'s'><line no. 2 on the invoice>.
+--    It is NOT a catalog key, so it is split into service_id + line_no.
+--  * One invoice = one FS number = one reference (CSI-... / CRSI-...) = one patient.
+--  * The same patient appears on several invoices/day -> visit table groups them.
+--  * Physician NAMES are not in the source. Consultations only name a specialty
+--    (GP / Internist / Endocrinologist), so physician.full_name is nullable and
+--    services link to a specialty. Fill physician names when available.
+--  * Only DATE is present (no time) -> transaction_time is nullable.
+--  * Report 3 (daily by cash/credit) and Report 4 (by item) are aggregates,
+--    so they are provided as VIEWS, not tables.
+-- =====================================================================
+
+-- ---------- Lookup / reference tables --------------------------------
+CREATE TABLE store (
+    store_id     SERIAL PRIMARY KEY,
+    store_name   VARCHAR(30) NOT NULL UNIQUE          -- GIT, STORE1, STORE2, STORE3
+);
+
+CREATE TABLE station (
+    station_id   SMALLINT PRIMARY KEY,                 -- 0 = N/A, 1 = STATION 1
+    station_name VARCHAR(30) NOT NULL UNIQUE
+);
+
+CREATE TABLE app_user (                                -- cashiers / billing operators
+    user_id      SERIAL PRIMARY KEY,
+    username     VARCHAR(50) NOT NULL UNIQUE,          -- meaza, Bereket, ...
+    display_name VARCHAR(100)
+);
+
+CREATE TABLE employee (                                -- "Sales Rep" in report 3
+    employee_id  SERIAL PRIMARY KEY,
+    full_name    VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE fiscal_device (                           -- "MRC" column (ERCA machine reg. code)
+    mrc_code     VARCHAR(20) PRIMARY KEY               -- e.g. BEN0031670
+);
+
+CREATE TABLE payment_type (
+    payment_type VARCHAR(10) PRIMARY KEY CHECK (payment_type IN ('CASH','CREDIT'))
+);
+
+CREATE TABLE invoice_type (                            -- prefix of the Reference number
+    invoice_type_code VARCHAR(6) PRIMARY KEY,          -- CSI, CRSI
+    description       VARCHAR(80)
+);
+
+-- ---------- Clinical staff -------------------------------------------
+CREATE TABLE specialty (
+    specialty_id SERIAL PRIMARY KEY,
+    name         VARCHAR(60) NOT NULL UNIQUE
+);
+
+CREATE TABLE physician (
+    physician_id SERIAL PRIMARY KEY,
+    full_name    VARCHAR(120),                         -- not present in source data
+    specialty_id INT NOT NULL REFERENCES specialty(specialty_id),
+    is_active    BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+-- ---------- Service catalogue ----------------------------------------
+CREATE TABLE service_category (
+    category_id  SERIAL PRIMARY KEY,
+    name         VARCHAR(40) NOT NULL UNIQUE           -- Consultation, Laboratory, Ultrasound, ...
+);
+
+CREATE TABLE service (
+    service_id     SERIAL PRIMARY KEY,
+    item_no        INT NOT NULL UNIQUE,                -- number before the 's' in Item ID
+    description    VARCHAR(120) NOT NULL,
+    category_id    INT NOT NULL REFERENCES service_category(category_id),
+    specialty_id   INT REFERENCES specialty(specialty_id),   -- set for consultations
+    default_price  NUMERIC(12,2) NOT NULL CHECK (default_price >= 0),
+    base_sku       VARCHAR(10) NOT NULL DEFAULT 'SQM'
+);
+
+-- ---------- Patients and visits --------------------------------------
+CREATE TABLE patient (
+    patient_id   BIGSERIAL PRIMARY KEY,
+    full_name    VARCHAR(150) NOT NULL,                -- "Customer" (names are not unique -> surrogate key)
+    tin_no       VARCHAR(20),                          -- blank in source
+    account_no   VARCHAR(30)                           -- "Customer Acc#" filter in Sales Report
+);
+CREATE INDEX ix_patient_name ON patient (LOWER(full_name));
+
+CREATE TABLE visit (                                   -- one patient, one day (groups several invoices)
+    visit_id     BIGSERIAL PRIMARY KEY,
+    patient_id   BIGINT NOT NULL REFERENCES patient(patient_id),
+    visit_date   DATE NOT NULL,
+    visit_time   TIME,
+    physician_id INT REFERENCES physician(physician_id),
+    UNIQUE (patient_id, visit_date)
+);
+
+-- ---------- Invoices --------------------------------------------------
+CREATE TABLE invoice (
+    invoice_id        BIGSERIAL PRIMARY KEY,
+    fs_no             VARCHAR(12) NOT NULL UNIQUE,     -- 00076188
+    reference_no      VARCHAR(30) NOT NULL UNIQUE,     -- CSI-ST1-01-0068158 / CRSI-ST1-01-0008214
+    invoice_type_code VARCHAR(6)  NOT NULL REFERENCES invoice_type(invoice_type_code),
+    ref_note          VARCHAR(20),                     -- PAY-61667
+    visit_id          BIGINT NOT NULL REFERENCES visit(visit_id),
+    patient_id        BIGINT NOT NULL REFERENCES patient(patient_id),
+    transaction_date  DATE NOT NULL,
+    transaction_time  TIME,
+    store_id          INT NOT NULL REFERENCES store(store_id),
+    station_id        SMALLINT REFERENCES station(station_id),
+    user_id           INT NOT NULL REFERENCES app_user(user_id),
+    employee_id       INT REFERENCES employee(employee_id),      -- sales rep (blank in data)
+    payment_type      VARCHAR(10) NOT NULL REFERENCES payment_type(payment_type),
+    mrc_code          VARCHAR(20) REFERENCES fiscal_device(mrc_code),
+    is_void           BOOLEAN NOT NULL DEFAULT FALSE,
+    subtotal          NUMERIC(14,2) NOT NULL DEFAULT 0,
+    tax_amt           NUMERIC(14,2) NOT NULL DEFAULT 0,
+    withholding       NUMERIC(14,2) NOT NULL DEFAULT 0,
+    total             NUMERIC(14,2) GENERATED ALWAYS AS (subtotal + tax_amt) STORED
+);
+CREATE INDEX ix_invoice_date    ON invoice (transaction_date);
+CREATE INDEX ix_invoice_patient ON invoice (patient_id);
+
+CREATE TABLE invoice_line (
+    line_id      BIGSERIAL PRIMARY KEY,
+    invoice_id   BIGINT NOT NULL REFERENCES invoice(invoice_id) ON DELETE CASCADE,
+    line_no      SMALLINT NOT NULL CHECK (line_no > 0),        -- the number after 's' in Item ID
+    service_id   INT NOT NULL REFERENCES service(service_id),
+    physician_id INT REFERENCES physician(physician_id),       -- performing / consulting physician
+    quantity     NUMERIC(10,2) NOT NULL DEFAULT 1 CHECK (quantity > 0),
+    unit_price   NUMERIC(12,2) NOT NULL CHECK (unit_price >= 0),
+    subtotal     NUMERIC(14,2) NOT NULL,
+    tax_amt      NUMERIC(14,2) NOT NULL DEFAULT 0,
+    withholding  NUMERIC(14,2) NOT NULL DEFAULT 0,
+    UNIQUE (invoice_id, line_no),
+    CONSTRAINT ck_line_subtotal CHECK (subtotal = quantity * unit_price)
+);
+CREATE INDEX ix_line_service ON invoice_line (service_id);
+
+-- Rebuild the report-style Item ID (e.g. 18s2) when needed
+CREATE VIEW v_invoice_line_detail AS
+SELECT  il.line_id, i.invoice_id, i.fs_no, i.reference_no, i.transaction_date,
+        p.full_name AS patient_name,
+        s.item_no || 's' || il.line_no AS item_id,
+        s.description, sc.name AS category,
+        ph.full_name AS physician_name, sp.name AS physician_specialty,
+        il.quantity, il.unit_price, il.subtotal, il.tax_amt, il.withholding,
+        i.mrc_code, i.is_void
+FROM invoice_line il
+JOIN invoice i          ON i.invoice_id = il.invoice_id
+JOIN patient p          ON p.patient_id = i.patient_id
+JOIN service s          ON s.service_id = il.service_id
+JOIN service_category sc ON sc.category_id = s.category_id
+LEFT JOIN physician ph  ON ph.physician_id = il.physician_id
+LEFT JOIN specialty sp  ON sp.specialty_id = COALESCE(ph.specialty_id, s.specialty_id);
+
+-- ---------- Views reproducing the source reports ----------------------
+-- Sales Report (one row per invoice)
+CREATE VIEW v_sales_report AS
+SELECT i.ref_note, i.fs_no, i.transaction_date, i.reference_no, p.full_name AS customer,
+       st.store_name, u.username AS "user", i.subtotal, i.tax_amt AS tax, i.total
+FROM invoice i
+JOIN patient p ON p.patient_id = i.patient_id
+JOIN store st  ON st.store_id  = i.store_id
+JOIN app_user u ON u.user_id   = i.user_id
+WHERE NOT i.is_void;
+
+-- Sales by Sales Rep Summary (daily, by cash/credit)
+CREATE VIEW v_daily_sales_by_payment AS
+SELECT i.transaction_date, e.full_name AS sales_rep, i.payment_type,
+       SUM(i.subtotal) AS subtotal, SUM(i.tax_amt) AS tax, SUM(i.total) AS total
+FROM invoice i LEFT JOIN employee e ON e.employee_id = i.employee_id
+WHERE NOT i.is_void
+GROUP BY i.transaction_date, e.full_name, i.payment_type;
+
+-- Sales Summary by Item Sold (grouped by service; report grouped by full item id)
+CREATE VIEW v_item_sales_summary AS
+SELECT i.transaction_date, s.item_no, s.description,
+       SUM(il.quantity) AS quantity, SUM(il.subtotal) AS total
+FROM invoice_line il
+JOIN invoice i ON i.invoice_id = il.invoice_id
+JOIN service s ON s.service_id = il.service_id
+WHERE NOT i.is_void
+GROUP BY i.transaction_date, s.item_no, s.description;
+
+-- Revenue per specialty / physician (uses consult services when no physician is named)
+CREATE VIEW v_revenue_by_specialty AS
+SELECT i.transaction_date, COALESCE(sp.name,'(non-consult)') AS specialty,
+       COUNT(DISTINCT i.invoice_id) AS invoices, SUM(il.subtotal) AS revenue
+FROM invoice_line il
+JOIN invoice i ON i.invoice_id = il.invoice_id
+JOIN service s ON s.service_id = il.service_id
+LEFT JOIN physician ph ON ph.physician_id = il.physician_id
+LEFT JOIN specialty sp ON sp.specialty_id = COALESCE(ph.specialty_id, s.specialty_id)
+WHERE NOT i.is_void
+GROUP BY i.transaction_date, COALESCE(sp.name,'(non-consult)');
+
+-- =====================================================================
+-- SEED DATA (lookups taken from the reports)
+-- =====================================================================
+INSERT INTO store(store_name) VALUES ('GIT'),('STORE1'),('STORE2'),('STORE3');
+INSERT INTO station VALUES (0,'N/A'),(1,'STATION 1');
+INSERT INTO payment_type VALUES ('CASH'),('CREDIT');
+INSERT INTO invoice_type VALUES ('CSI','Cash/standard sales invoice (assumed)'),
+                                ('CRSI','Credit sales invoice (assumed)');
+INSERT INTO fiscal_device VALUES ('BEN0031670');
+INSERT INTO app_user(username) VALUES ('meaza'),('Bereket'),('emush'),('adanu'),('meser'),
+  ('Birtukan'),('Sara'),('Aster'),('Netsanet'),('Beza'),('yemisrach'),('Misrak'),('Hewan');
+INSERT INTO employee(full_name) VALUES ('EMPLOYEE 01'),('temsgen gebru'),('beminet tilahun'),('YEWUBINESH ANIKERSA');
+
+INSERT INTO specialty(name) VALUES ('General Practitioner'),('Internist'),
+  ('Endocrinologist'),('Internist / Endocrinologist');
+INSERT INTO physician(full_name, specialty_id)      -- placeholders: replace with real names
+SELECT NULL, specialty_id FROM specialty;
+
+INSERT INTO service_category(name) VALUES ('Consultation'),('Laboratory'),('Ultrasound'),
+  ('Radiology'),('Cardiology'),('Procedure');
+
+-- item_no, description, category, specialty (consults only), price
+WITH src(item_no, description, cat, spec, price) AS (VALUES
+ (1,'Consultancy of GP Card','Consultation','General Practitioner',600),
+ (2,'Consultancy of Internist Card','Consultation','Internist',800),
+ (9,'Consultancy of Internist, Endocrinologist','Consultation','Internist / Endocrinologist',950),
+ (425,'Consultancy of Endocronlogist','Consultation','Endocrinologist',950),
+ (18,'CBC','Laboratory',NULL,450),(40,'ESR','Laboratory',NULL,150),(41,'Blood Film','Laboratory',NULL,200),
+ (47,'CRP Quantitative','Laboratory',NULL,750),(53,'H.pylori Ab','Laboratory',NULL,500),
+ (60,'FBS','Laboratory',NULL,100),(61,'RBS','Laboratory',NULL,100),(62,'HbA1c','Laboratory',NULL,950),
+ (64,'SGOT','Laboratory',NULL,250),(65,'SGPT','Laboratory',NULL,250),(66,'ALP','Laboratory',NULL,250),
+ (67,'Bilirubin (T)','Laboratory',NULL,250),(68,'Bilirubin (D)','Laboratory',NULL,250),
+ (72,'BUN','Laboratory',NULL,250),(73,'Creatinine','Laboratory',NULL,250),(74,'Uric Acid','Laboratory',NULL,250),
+ (76,'Triglyceride (TG)','Laboratory',NULL,250),(77,'Cholesterol','Laboratory',NULL,250),
+ (78,'HDL','Laboratory',NULL,500),(79,'LDL','Laboratory',NULL,500),(87,'Urinalysis','Laboratory',NULL,200),
+ (104,'Micro Albumin','Laboratory',NULL,300),(118,'PSA','Laboratory',NULL,900),(124,'TSH','Laboratory',NULL,1000),
+ (125,'Free T3','Laboratory',NULL,900),(126,'Free T4','Laboratory',NULL,900),
+ (127,'Electrolyte Panel','Laboratory',NULL,1500),(387,'25-OH-Vitamin D','Laboratory',NULL,2000),
+ (316,'2 hour post prandial','Laboratory',NULL,200),
+ (141,'Abdomen Ultrasound','Ultrasound',NULL,700),(142,'Abdominal + Pelvic Ultrasound','Ultrasound',NULL,800),
+ (143,'Chest Ultrasound','Ultrasound',NULL,800),(159,'Thyroid Ultrasound','Ultrasound',NULL,800),
+ (168,'Breast right','Ultrasound',NULL,850),(170,'Knee left Ultrasound','Ultrasound',NULL,800),
+ (171,'Knee right Ultrasound','Ultrasound',NULL,800),
+ (205,'Lumbar spine X-ray','Radiology',NULL,1000),
+ (379,'ECG','Cardiology',NULL,1000),
+ (317,'Blood Pressure Measurement (BP)','Procedure',NULL,50),
+ (410,'IM injection','Procedure',NULL,75),(411,'IV injection','Procedure',NULL,100))
+INSERT INTO service(item_no, description, category_id, specialty_id, default_price)
+SELECT s.item_no, s.description, c.category_id, sp.specialty_id, s.price
+FROM src s
+JOIN service_category c ON c.name = s.cat
+LEFT JOIN specialty sp ON sp.name = s.spec;
+
+-- =====================================================================
+-- WORKED EXAMPLE: invoice 00076196 (BEHASEN ABDI ISMAEL, 5,900.00)
+-- =====================================================================
+INSERT INTO patient(full_name) VALUES ('BEHASEN ABDI ISMAEL');
+
+INSERT INTO visit(patient_id, visit_date)
+SELECT patient_id, DATE '2026-09-29' FROM patient WHERE full_name='BEHASEN ABDI ISMAEL';
+
+INSERT INTO invoice(fs_no, reference_no, invoice_type_code, ref_note, visit_id, patient_id,
+                    transaction_date, store_id, station_id, user_id, payment_type,
+                    mrc_code, subtotal)
+SELECT '00076196','CSI-ST1-01-0068165','CSI','PAY-61675', v.visit_id, v.patient_id,
+       DATE '2026-09-29',
+       (SELECT store_id FROM store WHERE store_name='STORE1'), 1,
+       (SELECT user_id FROM app_user WHERE username='meaza'),
+       'CASH','BEN0031670', 5900
+FROM visit v JOIN patient p USING (patient_id) WHERE p.full_name='BEHASEN ABDI ISMAEL';
+
+INSERT INTO invoice_line(invoice_id, line_no, service_id, quantity, unit_price, subtotal)
+SELECT i.invoice_id, d.line_no, s.service_id, 1, s.default_price, s.default_price
+FROM invoice i
+JOIN (VALUES (1,425),(2,18),(3,87),(4,60),(5,62),(6,64),(7,65),(8,66),(9,67),
+             (10,68),(11,72),(12,73),(13,76),(14,77),(15,78),(16,79)) AS d(line_no,item_no) ON TRUE
+JOIN service s ON s.item_no = d.item_no
+WHERE i.fs_no = '00076196';

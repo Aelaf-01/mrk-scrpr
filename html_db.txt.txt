@@ -1,0 +1,16 @@
+database structure
+
+maraki.db
+
+Patient_table
+Patient_name
+Patient_id
+tin_number
+services
+Fs_umber
+
+services_table
+
+physicians_table
+
+

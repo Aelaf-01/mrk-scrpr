@@ -1,0 +1,583 @@
+
+<!-- saved from url=(0103)http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000053 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!--# STYLES #-->
+<script type="text/javascript" language="JavaScript">
+<!--
+//	JS strings
+	var l_lang = "en_US";
+	var l_sel_date = "Select Date";
+	var l_not_allowed = "This date is not allowed to be selected";
+	var l_date_before = "Please choose a date before %s";
+	var l_date_after = "Please choose a date after %s";
+	var l_date_between = "Please choose a date between\n%s and %s";
+	var l_use_ymd_drop = "0";
+	var l_day = "Day";
+	var l_month = "Month";
+	var l_year = "Year";
+//	Long Month Names
+	var l_january = "January";
+	var l_february = "February";
+	var l_march = "March";
+	var l_april = "April";
+	var l_may = "May";
+	var l_june = "June";
+	var l_july = "July";
+	var l_august = "August";
+	var l_september = "September";
+	var l_october = "October";
+	var l_november = "November";
+	var l_december = "December";
+if(l_lang == "el_GR"){
+//	Date Month Names Greek
+	var l_januaryu = "";
+	var l_februaryu = "";
+	var l_marchu = "";
+	var l_aprilu = "";
+	var l_mayu = "";
+	var l_juneu = "";
+	var l_julyu = "";
+	var l_augustu = "";
+	var l_septemberu = "";
+	var l_octoberu = "";
+	var l_novemberu = "";
+	var l_decemberu = "";
+}
+//	Short Month Names
+	var s_jan = "Jan";
+	var s_feb = "Feb";
+	var s_mar = "Mar";
+	var s_apr = "Apr";
+	var s_may = "May";
+	var s_jun = "Jun";
+	var s_jul = "Jul";
+	var s_aug = "Aug";
+	var s_sep = "Sep";
+	var s_oct = "Oct";
+	var s_nov = "Nov";
+	var s_dec = "Dec";
+//	Long Day Names
+	var l_monday = "Monday";
+	var l_tuesday = "Tuesday";
+	var l_wednesday = "Wednesday";
+	var l_thursday = "Thursday";
+	var l_friday = "Friday";
+	var l_saturday = "Saturday";
+	var l_sunday = "Sunday";
+//	Short Day Names
+	var s_mon = "Mo";
+	var s_tue = "Tu";
+	var s_wed = "We";
+	var s_thu = "Th";
+	var s_fri = "Fr";
+	var s_sat = "Sa";
+	var s_sun = "Su";
+// -->
+</script>
+<script language="javascript" src="./calendar.js.download"></script>
+	
+<script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+function MM_scanStyles(obj, prop) { //v8.0
+  var inlineStyle = null; var ccProp = prop; var dash = ccProp.indexOf("-");
+  while (dash != -1){ccProp = ccProp.substring(0, dash) + ccProp.substring(dash+1,dash+2).toUpperCase() + ccProp.substring(dash+2); dash = ccProp.indexOf("-");}
+  inlineStyle = eval("obj.style." + ccProp);
+  if(inlineStyle) return inlineStyle;
+  var ss = document.styleSheets;
+  for (var x = 0; x < ss.length; x++) { var rules = ss[x].cssRules;
+	for (var y = 0; y < rules.length; y++) { var z = rules[y].style;
+	  if(z[prop] && (rules[y].selectorText == '*[ID"' + obj.id + '"]')) {
+        return z[prop];
+  }  }  }  return "";
+}
+
+function MM_getProp(obj, prop) { //v8.0
+  if (!obj) return ("");
+  if (prop == "L") return obj.offsetLeft;
+  else if (prop == "T") return obj.offsetTop;
+  else if (prop == "W") return obj.offsetWidth;
+  else if (prop == "H") return obj.offsetHeight;
+  else {
+    if (typeof(window.getComputedStyle) == "undefined") {
+	    if (typeof(obj.currentStyle) == "undefined"){
+		    if (prop == "P") return MM_scanStyles(obj,"position");
+        else if (prop == "Z") return MM_scanStyles(obj,"z-index");
+        else if (prop == "V") return MM_scanStyles(obj,"visibility");
+	    } else {
+	      if (prop == "P") return obj.currentStyle.position;
+        else if (prop == "Z") return obj.currentStyle.zIndex;
+        else if (prop == "V") return obj.currentStyle.visibility;
+	    }
+    } else {
+	    if (prop == "P") return window.getComputedStyle(obj,null).getPropertyValue("position");
+      else if (prop == "Z") return window.getComputedStyle(obj,null).getPropertyValue("z-index");
+      else if (prop == "V") return window.getComputedStyle(obj,null).getPropertyValue("visibility");
+    }
+  }
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v8.0
+  //Copyright 2005 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,curLeft,curTop,IE=document.all,NS4=document.layers;
+  var NS6=(!IE&&document.getElementById), NS=(NS4||NS6); if (!IE && !NS) return false;
+  retVal = true; if(IE && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS4) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else {
+        if (NS6) { var spns = getElementsByTagName("span"); var all = getElementsByTagName("div"); 
+          for (i=0;i<spns.length;i++) if (MM_getProp(spns[i],'P')) allLayers[allLayers.length]=spns[i];}
+        for (i=0;i<all.length;i++) {
+	  if (NS4){if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+          else if (MM_getProp(all[i],'P')) allLayers[allLayers.length]=all[i]; 
+        }
+    } }
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+  
+    curDrag.MM_oldZ = (NS4)?curDrag.zIndex:MM_getProp(curDrag,'Z');
+    curLeft= (NS4)?curDrag.left:MM_getProp(curDrag,'L');
+    if (String(curLeft)=="NaN") curLeft=0; curDrag.MM_startL = curLeft;
+    curTop = (NS4)?curDrag.top:MM_getProp(curDrag,'T');
+    if (String(curTop)=="NaN") curTop=0; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop-cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop+cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS4)?aLayer.zIndex:MM_getProp(aLayer,'Z');
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = ((NS4)?aLayer.visibility:MM_getProp(aLayer,'V')).indexOf('hid') == -1;
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (NS6) { parentLayer = aLayer.parentNode;
+            while (parentLayer != null && parentLayer != document && MM_getProp(parentLayer,'P')) {
+              parentL += parseInt(MM_getProp(parentLayer,'L')); parentT += parseInt(MM_getProp(parentLayer,'T'));
+              parentLayer = parentLayer.parentNode;
+              if (parentLayer==document) parentLayer = null;
+          } } else if (IE) { parentLayer = aLayer.parentElement;       
+            while (parentLayer != null && MM_getProp(parentLayer,'P')) {
+              parentL += MM_getProp(parentLayer,'L'); parentT += MM_getProp(parentLayer,'T');
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-((NS4)?pageX:(MM_getProp(aLayer,'L'))+parentL+MM_hLeft);
+          var tmpY=mouseY-((NS4)?pageY:(MM_getProp(aLayer,'T'))+parentT+MM_hTop);
+          if (String(tmpX)=="NaN") tmpX=0; if (String(tmpY)=="NaN") tmpY=0;
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += (NS4)?clip.width:MM_getProp(aLayer,'W');
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += (NS4)?clip.height:MM_getProp(aLayer,'H');
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS4) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS4)?curDrag.left:MM_getProp(curDrag,'L');
+        curTop = (NS4)?curDrag.top:MM_getProp(curDrag,'T');
+        if (String(curLeft)=="NaN") curLeft=0; if (String(curTop)=="NaN") curTop=0;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          var newZ = parseInt(document.MM_maxZ)+1;
+          eval('curDrag.'+((NS4)?'':'style.')+'zIndex=newZ');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS4&&!NS6) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        var newLeft = mouseX-MM_oldX; var newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS4) {left = newLeft; top = newTop;}
+        else if (NS6){style.left = newLeft + "px"; style.top = newTop + "px";}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS4)?left:MM_getProp(document.MM_curDrag,'L')),2)+
+             Math.pow(MM_targT-((NS4)?top:MM_getProp(document.MM_curDrag,'T')),2))<=MM_tol) {
+          if (NS4) {left = MM_targL; top = MM_targT;}
+          else if (NS6) {style.left = MM_targL + "px"; style.top = MM_targT + "px";}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS4) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</script>
+        <link href="./table_styles.css" rel="stylesheet" type="text/css">
+        <link href="./border.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="./style.css">
+		<script type="text/javascript" src="./script.js.download"></script>
+		<style type="text/css">
+		
+		<style type="text/css">
+<!--
+
+.a4_size {
+	position: absolute;
+	width: 7.89in;
+	top: 0px;
+	height: 10in;
+	overflow: visible;
+}
+
+#Layer1 {
+	position:absolute;
+	width:auto;
+	z-index:57;
+	display: inline;
+	left: 262px;
+	top: 101px;
+	visibility: visible;
+}
+
+-->
+        </style>
+<style type="text/css">
+<!--
+.StyleHidden
+{
+	visibility:hidden;
+	width:0.001;
+}
+
+.StyleVisible
+{
+	visibility:visible;
+}
+
+.styleCompany {
+	font-size: 12px;
+	text-align:left;
+}
+.StyleReportHead
+{
+	font-size: 12px;
+}
+.CriteriaStyle
+{
+	font-size: 14px;
+}
+.StyleReportCriteriaHeaderTr
+{
+	font-size: 10px;
+	text-align:left;
+}
+.StyleReportSummaryFooterTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	border-bottom-width: 1px;
+	border-bottom-style: double;
+	border-bottom-color: #000000;
+	
+	border-top-width: 1px;
+	border-top-style: double;
+	border-top-color: #000000;
+}
+
+.StyleReportSummaryInLineFooterTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.StyleReportFooterNotesTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	font-style:italic;
+}
+.StyleReportDataHeaderTd
+{
+	
+}
+.StyleReportDataHeaderTr
+{
+	font-weight:bold;
+	text-align:left;
+	font-size:14px;
+}
+.StyleReportDataTr
+{
+	font-size: 12px;
+}
+.StyleReportDataHeaderTd
+{
+	font-size: 12px;
+}
+
+.select_comb{
+	width: 200px;
+}
+.select_text{
+	width: 200px;
+}
+.select_text_date{
+	width: 200px;
+}
+
+.StyleOptionsTable
+{
+	font-size: 12px;
+	border: medium solid #003366;
+}
+
+.StyleButtonOptions
+{
+	width: 15px;
+	height: 15px;
+	text-align:center;
+	vertical-align:top;
+	
+}
+.StyleOptionsTable .style15 {
+	border-bottom-width: thin;
+	border-bottom-style: double;
+	border-bottom-color: #000000;
+}
+.style1 {color: #FFFFFF}
+#Layer2 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:58;
+	visibility: visible;
+}
+-->
+</style>
+ <!--# END STYLES #-->
+  <title>Sales Summary By Item sold</title>
+</head>
+<body onload="MM_dragLayer('Layer1','',0,0,900,30,true,false,-1,-1,-1,-1,false,false,0,'',false,'');MM_showHideLayers('Layer1','','hide')" "="">
+
+<form action="http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php" name="frm_save" method="POST">	
+<input type="hidden" name="sel_report_ID" id="sel_report_ID" value="001-07-0000000053">
+<!--# REPORT VARIABLES OPTIONS #-->
+<div id="Layer1" style="visibility: hidden;">
+ <table width="1" height="1" border="0" cellpadding="3" cellspacing="0" bgcolor="#D8EDFF" class="StyleOptionsTable">	
+	<input type="hidden" id="mode" name="mode" value="0">
+  <tbody><tr>
+    <td colspan="5" align="center" bgcolor="#003366" class="style15 style1" mouseover="cursor.move">Option for Sales Summary By Item sold	<input type="hidden" id="show_hide_option" name="show_hide_option" value="0">	
+	<span align="right"><input type="button" id="close_option" name="close_option" value="X" onclick="MM_showHideLayers('Layer1','','hide');"></span></td>
+	
+  </tr>				
+ 		
+					<tr id="tbl_ov_row0" onmouseover="tbl_ov_row0.bgColor='#CCCCCC'" onmouseout="tbl_ov_row0.bgColor=''" bgcolor="">
+				<td nowrap="nowrap">Station</td>
+				<td><select name="op_varstation" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_varstation" class="select_comb"><option value=""></option><option value="0">N/A</option><option value="1">STATION 1</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+							
+					<tr id="tbl_ov_row1" onmouseover="tbl_ov_row1.bgColor='#CCCCCC'" onmouseout="tbl_ov_row1.bgColor=''" bgcolor="">
+				<td nowrap="nowrap">Store</td>
+				<td><select name="op_varStoreID" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_varStoreID" class="select_comb"><option value=""></option><option value="000-00-0000000000">GIT</option><option value="000-00-0000000001">STORE1</option><option value="000-00-0000000002">STORE2</option><option value="000-00-0000000003">STORE3</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+							
+						 
+				
+				 
+				
+								
+					<tr id="tbl_ov_row2" onmouseover="tbl_ov_row2.bgColor='#CCCCCC'" onmouseout="tbl_ov_row2.bgColor=''" bgcolor="">
+					<td nowrap="nowrap">Date</td>
+					<td>
+						<select name="op_varTransDate" size="1" class="StyleHidden">
+							<option value="Between">Between</option>
+							<option value="&gt;">&gt;</option>
+							<option value="&gt;=">&gt;</option>
+							<option value="&lt;">&lt;</option>
+							<option value="&lt;=">&lt;=</option>
+							<option value="!=">!=</option>
+						</select>
+						<input type="hidden" class="select_text_date" name="op_varTransDate" value="Between">					</td>
+					<td nowrap="nowrap">
+					<table>
+						<tbody><tr>
+							<td nowrap="nowrap" align="right">
+						<input type="hidden" name="txt_varTransDate" id="txt_varTransDate" value="2026-09-29"><input type="hidden" name="txt_varTransDate_dp" id="txt_varTransDate_dp" value="1"><input type="hidden" name="txt_varTransDate_year_start" id="txt_varTransDate_year_start" value="1945"><input type="hidden" name="txt_varTransDate_year_end" id="txt_varTransDate_year_end" value="3010"><input type="hidden" name="txt_varTransDate_da1" id="txt_varTransDate_da1" value=""><input type="hidden" name="txt_varTransDate_da2" id="txt_varTransDate_da2" value=""><input type="hidden" name="txt_varTransDate_sna" id="txt_varTransDate_sna" value="1"><input type="hidden" name="txt_varTransDate_aut" id="txt_varTransDate_aut" value=""><input type="hidden" name="txt_varTransDate_frm" id="txt_varTransDate_frm" value=""><input type="hidden" name="txt_varTransDate_tar" id="txt_varTransDate_tar" value=""><input type="hidden" name="txt_varTransDate_inp" id="txt_varTransDate_inp" value=""><input type="hidden" name="txt_varTransDate_fmt" id="txt_varTransDate_fmt" value="F j, Y"><input type="hidden" name="txt_varTransDate_dis" id="txt_varTransDate_dis" value=""><input type="hidden" name="txt_varTransDate_pr1" id="txt_varTransDate_pr1" value=""><input type="hidden" name="txt_varTransDate_pr2" id="txt_varTransDate_pr2" value=""><input type="hidden" name="txt_varTransDate_prv" id="txt_varTransDate_prv" value=""><input type="hidden" name="txt_varTransDate_pth" id="txt_varTransDate_pth" value="calendar/"><input type="hidden" name="txt_varTransDate_spd" id="txt_varTransDate_spd" value="[[],[],[]]"><input type="hidden" name="txt_varTransDate_spt" id="txt_varTransDate_spt" value="0"><input type="hidden" name="txt_varTransDate_och" id="txt_varTransDate_och" value=""><input type="hidden" name="txt_varTransDate_str" id="txt_varTransDate_str" value="0"><input type="hidden" name="txt_varTransDate_rtl" id="txt_varTransDate_rtl" value="0"><input type="hidden" name="txt_varTransDate_wks" id="txt_varTransDate_wks" value=""><input type="hidden" name="txt_varTransDate_int" id="txt_varTransDate_int" value="1"><input type="hidden" name="txt_varTransDate_hid" id="txt_varTransDate_hid" value="1"><input type="hidden" name="txt_varTransDate_hdt" id="txt_varTransDate_hdt" value="1000"><input type="hidden" name="txt_varTransDate_hl" id="txt_varTransDate_hl" value="en_US"><div style="position: relative; z-index: 1; float: left;" id="container_txt_varTransDate" onmouseover="javascript:focusCalendar('txt_varTransDate');" onmouseout="javascript:unFocusCalendar('txt_varTransDate', 1);"> <a href="javascript:toggleCalendar('txt_varTransDate', 1, 1000);"><span id="divCalendar_txt_varTransDate_lbl" class="date-tccontainer">September 29, 2026</span></a> <a href="javascript:toggleCalendar('txt_varTransDate', 1, 1000);"><img src="./iconCalendar.gif" id="tcbtn_txt_varTransDate" name="tcbtn_txt_varTransDate" border="0" align="absmiddle"></a><div id="div_txt_varTransDate" style="position: absolute; visibility: hidden; z-index: 100; top: 18px; left: 0px; width: 164px; height: 190px;" class="div_calendar calendar-border" onmouseout="javascript:prepareHide('txt_varTransDate', 1000);" onmouseover="javascript:cancelHide('txt_varTransDate');"><iframe id="txt_varTransDate_frame" src="./calendar_form.html" frameborder="0" scrolling="no" allowtransparency="true" width="100%" height="100%" style="z-index: 100;"></iframe></div></div>							</td>
+						</tr><tr>
+					</tr></tbody></table>		
+					</td>
+					<td>&nbsp;</td>
+					<td nowrap="nowrap">
+										<table>
+						<tbody><tr>
+							<td nowrap="nowrap">
+						<input type="hidden" name="txt2_varTransDate" id="txt2_varTransDate" value="2026-09-29"><input type="hidden" name="txt2_varTransDate_dp" id="txt2_varTransDate_dp" value="1"><input type="hidden" name="txt2_varTransDate_year_start" id="txt2_varTransDate_year_start" value="1945"><input type="hidden" name="txt2_varTransDate_year_end" id="txt2_varTransDate_year_end" value="3010"><input type="hidden" name="txt2_varTransDate_da1" id="txt2_varTransDate_da1" value=""><input type="hidden" name="txt2_varTransDate_da2" id="txt2_varTransDate_da2" value=""><input type="hidden" name="txt2_varTransDate_sna" id="txt2_varTransDate_sna" value="1"><input type="hidden" name="txt2_varTransDate_aut" id="txt2_varTransDate_aut" value=""><input type="hidden" name="txt2_varTransDate_frm" id="txt2_varTransDate_frm" value=""><input type="hidden" name="txt2_varTransDate_tar" id="txt2_varTransDate_tar" value=""><input type="hidden" name="txt2_varTransDate_inp" id="txt2_varTransDate_inp" value=""><input type="hidden" name="txt2_varTransDate_fmt" id="txt2_varTransDate_fmt" value="F j, Y"><input type="hidden" name="txt2_varTransDate_dis" id="txt2_varTransDate_dis" value=""><input type="hidden" name="txt2_varTransDate_pr1" id="txt2_varTransDate_pr1" value=""><input type="hidden" name="txt2_varTransDate_pr2" id="txt2_varTransDate_pr2" value=""><input type="hidden" name="txt2_varTransDate_prv" id="txt2_varTransDate_prv" value=""><input type="hidden" name="txt2_varTransDate_pth" id="txt2_varTransDate_pth" value="calendar/"><input type="hidden" name="txt2_varTransDate_spd" id="txt2_varTransDate_spd" value="[[],[],[]]"><input type="hidden" name="txt2_varTransDate_spt" id="txt2_varTransDate_spt" value="0"><input type="hidden" name="txt2_varTransDate_och" id="txt2_varTransDate_och" value=""><input type="hidden" name="txt2_varTransDate_str" id="txt2_varTransDate_str" value="0"><input type="hidden" name="txt2_varTransDate_rtl" id="txt2_varTransDate_rtl" value="0"><input type="hidden" name="txt2_varTransDate_wks" id="txt2_varTransDate_wks" value=""><input type="hidden" name="txt2_varTransDate_int" id="txt2_varTransDate_int" value="1"><input type="hidden" name="txt2_varTransDate_hid" id="txt2_varTransDate_hid" value="1"><input type="hidden" name="txt2_varTransDate_hdt" id="txt2_varTransDate_hdt" value="1000"><input type="hidden" name="txt2_varTransDate_hl" id="txt2_varTransDate_hl" value="en_US"><div style="position: relative; z-index: 1; float: left;" id="container_txt2_varTransDate" onmouseover="javascript:focusCalendar('txt2_varTransDate');" onmouseout="javascript:unFocusCalendar('txt2_varTransDate', 1);"> <a href="javascript:toggleCalendar('txt2_varTransDate', 1, 1000);"><span id="divCalendar_txt2_varTransDate_lbl" class="date-tccontainer">September 29, 2026</span></a> <a href="javascript:toggleCalendar('txt2_varTransDate', 1, 1000);"><img src="./iconCalendar.gif" id="tcbtn_txt2_varTransDate" name="tcbtn_txt2_varTransDate" border="0" align="absmiddle"></a><div id="div_txt2_varTransDate" style="position: absolute; visibility: hidden; z-index: 100; top: 18px; left: 0px; width: 164px; height: 190px;" class="div_calendar calendar-border" onmouseout="javascript:prepareHide('txt2_varTransDate', 1000);" onmouseover="javascript:cancelHide('txt2_varTransDate');"><iframe id="txt2_varTransDate_frame" src="./calendar_form(1).html" frameborder="0" scrolling="no" allowtransparency="true" width="100%" height="100%" style="z-index: 100;"></iframe></div></div>							</td>
+						</tr><tr>
+					</tr></tbody></table>		
+										</td>
+					</tr>
+				 
+				
+				 
+						<tr><td nowrap="nowrap" colspan="5">---</td></tr>  
+<!--# END REPORT VARIABLE OPTIONS #-->	
+
+<!--# REPORT OPTIONS #-->
+  		
+										
+					<tr id="tbl_op_row0" onmouseover="tbl_op_row0.bgColor='#CCCCCC'" onmouseout="tbl_op_row0.bgColor=''">
+					<td nowrap="nowrap">Item ID</td>
+					<td>
+						<select name="op_item_ID" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_item_ID" class="select_text" value="Like%">					</td>
+					<td><input name="txt_item_ID" class="select_text" type="text" id="txt_item_ID" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+										
+					<tr id="tbl_op_row1" onmouseover="tbl_op_row1.bgColor='#CCCCCC'" onmouseout="tbl_op_row1.bgColor=''">
+					<td nowrap="nowrap">Description</td>
+					<td>
+						<select name="op_item_description" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_item_description" class="select_text" value="Like%">					</td>
+					<td><input name="txt_item_description" class="select_text" type="text" id="txt_item_description" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								  <tr>
+    <td colspan="5" align="center" class="style15">
+		<button type="submit">Go To Report </button>	</td>
+  </tr>	
+</tbody></table>
+</div>
+<!--# END REPORT OPTIONS #-->
+
+<!--# REPORT DATA #-->
+<!--# REPORT HEADER #-->
+		
+  <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
+   <thead>
+    <tr>
+      <td colspan="4" class="report_header"><span class="styleCompany">SENAY HIGHER CLINIC, Sales Summary By Item sold</span></td>
+<!--# END REPORT HEADER #-->
+
+<!--# CRITERIA HEADER #-->
+     </tr><tr>
+          <td><a href="javascript:window.print();">print out</a></td>
+          <td colspan="3" class="StyleReportCriteriaHeaderTr"><a href="javascript:MM_showHideLayers('Layer1','','show');"><span class="CriteriaStyle">Criteria:</span>    - AND Station is  AND Store Between  and % AND Date Between 2026-09-29 and 2026-09-29</a></td>
+      </tr>
+<!--# END CRITERIA HEADER #-->
+
+<!--# DETAIL HEADER #-->
+    <tr>
+	  </tr><tr class="StyleReportDataHeaderTr"><td align="left">Item ID</td><td align="left">Description</td><td align="right">Quantity</td><td align="right">Total</td></tr>    
+	</thead>
+ <!--# END DETAIL HEADER #--> 
+    
+ <!--# DETAIL ROWS #-->  
+ 	<tbody><tr id="tbl_row1" onmouseover="tbl_row1.bgColor='#71C1FF'" onmouseout="tbl_row1.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">104s5</td><td align="left">Micro Albumin</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">300.00</td></tr><tr id="tbl_row2" onmouseover="tbl_row2.bgColor='#71C1FF'" onmouseout="tbl_row2.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">118s12</td><td align="left">PSA</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">900.00</td></tr><tr id="tbl_row3" onmouseover="tbl_row3.bgColor='#71C1FF'" onmouseout="tbl_row3.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">124s13</td><td align="left">TSH</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row4" onmouseover="tbl_row4.bgColor='#71C1FF'" onmouseout="tbl_row4.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">124s4</td><td align="left">TSH</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row5" onmouseover="tbl_row5.bgColor='#71C1FF'" onmouseout="tbl_row5.bgColor=''" bgcolor="#71C1FF" class="StyleReportDataTr"><td align="left">124s8</td><td align="left">TSH</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row6" onmouseover="tbl_row6.bgColor='#71C1FF'" onmouseout="tbl_row6.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">125s5</td><td align="left">Free T3</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">900.00</td></tr><tr id="tbl_row7" onmouseover="tbl_row7.bgColor='#71C1FF'" onmouseout="tbl_row7.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">126s6</td><td align="left">Free T4</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">900.00</td></tr><tr id="tbl_row8" onmouseover="tbl_row8.bgColor='#71C1FF'" onmouseout="tbl_row8.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">127s1</td><td align="left">Electrolyte Panel</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row9" onmouseover="tbl_row9.bgColor='#71C1FF'" onmouseout="tbl_row9.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">127s15</td><td align="left">Electrolyte Panel</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row10" onmouseover="tbl_row10.bgColor='#71C1FF'" onmouseout="tbl_row10.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">127s3</td><td align="left">Electrolyte Panel</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row11" onmouseover="tbl_row11.bgColor='#71C1FF'" onmouseout="tbl_row11.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">127s4</td><td align="left">Electrolyte Panel</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row12" onmouseover="tbl_row12.bgColor='#71C1FF'" onmouseout="tbl_row12.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">141s16</td><td align="left">Abdomen Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">700.00</td></tr><tr id="tbl_row13" onmouseover="tbl_row13.bgColor='#71C1FF'" onmouseout="tbl_row13.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">141s4</td><td align="left">Abdomen Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">700.00</td></tr><tr id="tbl_row14" onmouseover="tbl_row14.bgColor='#71C1FF'" onmouseout="tbl_row14.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">141s6</td><td align="left">Abdomen Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">700.00</td></tr><tr id="tbl_row15" onmouseover="tbl_row15.bgColor='#71C1FF'" onmouseout="tbl_row15.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">142s1</td><td align="left">Abdominal + Pelvic Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row16" onmouseover="tbl_row16.bgColor='#71C1FF'" onmouseout="tbl_row16.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">142s12</td><td align="left">Abdominal + Pelvic Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row17" onmouseover="tbl_row17.bgColor='#71C1FF'" onmouseout="tbl_row17.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">142s15</td><td align="left">Abdominal + Pelvic Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row18" onmouseover="tbl_row18.bgColor='#71C1FF'" onmouseout="tbl_row18.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">142s6</td><td align="left">Abdominal + Pelvic Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row19" onmouseover="tbl_row19.bgColor='#71C1FF'" onmouseout="tbl_row19.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">143s7</td><td align="left">Chest Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row20" onmouseover="tbl_row20.bgColor='#71C1FF'" onmouseout="tbl_row20.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">159s14</td><td align="left">Thyroid Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row21" onmouseover="tbl_row21.bgColor='#71C1FF'" onmouseout="tbl_row21.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">168s1</td><td align="left">Breast right</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">850.00</td></tr><tr id="tbl_row22" onmouseover="tbl_row22.bgColor='#71C1FF'" onmouseout="tbl_row22.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">170s5</td><td align="left">Knee left Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row23" onmouseover="tbl_row23.bgColor='#71C1FF'" onmouseout="tbl_row23.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">171s4</td><td align="left">Knee right Ultrasound</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">800.00</td></tr><tr id="tbl_row24" onmouseover="tbl_row24.bgColor='#71C1FF'" onmouseout="tbl_row24.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">18s1</td><td align="left">CBC</td><td align="right" nowrap="nowrap">6.00</td><td align="right" nowrap="nowrap">2,700.00</td></tr><tr id="tbl_row25" onmouseover="tbl_row25.bgColor='#71C1FF'" onmouseout="tbl_row25.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">18s10</td><td align="left">CBC</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">450.00</td></tr><tr id="tbl_row26" onmouseover="tbl_row26.bgColor='#71C1FF'" onmouseout="tbl_row26.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">18s2</td><td align="left">CBC</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">900.00</td></tr><tr id="tbl_row27" onmouseover="tbl_row27.bgColor='#71C1FF'" onmouseout="tbl_row27.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">18s8</td><td align="left">CBC</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">450.00</td></tr><tr id="tbl_row28" onmouseover="tbl_row28.bgColor='#71C1FF'" onmouseout="tbl_row28.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">18s9</td><td align="left">CBC</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">450.00</td></tr><tr id="tbl_row29" onmouseover="tbl_row29.bgColor='#71C1FF'" onmouseout="tbl_row29.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">1s1</td><td align="left">Consultancy of GP Card</td><td align="right" nowrap="nowrap">14.00</td><td align="right" nowrap="nowrap">7,700.00</td></tr><tr id="tbl_row30" onmouseover="tbl_row30.bgColor='#71C1FF'" onmouseout="tbl_row30.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">205s1</td><td align="left">Lumbar spine X-ray</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row31" onmouseover="tbl_row31.bgColor='#71C1FF'" onmouseout="tbl_row31.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">2s1</td><td align="left">Consultancy of Internist Card</td><td align="right" nowrap="nowrap">9.00</td><td align="right" nowrap="nowrap">7,200.00</td></tr><tr id="tbl_row32" onmouseover="tbl_row32.bgColor='#71C1FF'" onmouseout="tbl_row32.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">316s3</td><td align="left">2 hour post prandial</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row33" onmouseover="tbl_row33.bgColor='#71C1FF'" onmouseout="tbl_row33.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">317s1</td><td align="left">Blood Pressure Measurement (BP)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">50.00</td></tr><tr id="tbl_row34" onmouseover="tbl_row34.bgColor='#71C1FF'" onmouseout="tbl_row34.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">317s2</td><td align="left">Blood Pressure Measurement (BP)</td><td align="right" nowrap="nowrap">4.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row35" onmouseover="tbl_row35.bgColor='#71C1FF'" onmouseout="tbl_row35.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">379s16</td><td align="left">ECG</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row36" onmouseover="tbl_row36.bgColor='#71C1FF'" onmouseout="tbl_row36.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">387s12</td><td align="left">25-OH-Vitamin D</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">2,000.00</td></tr><tr id="tbl_row37" onmouseover="tbl_row37.bgColor='#71C1FF'" onmouseout="tbl_row37.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">387s15</td><td align="left">25-OH-Vitamin D</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">2,000.00</td></tr><tr id="tbl_row38" onmouseover="tbl_row38.bgColor='#71C1FF'" onmouseout="tbl_row38.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">40s2</td><td align="left">ESR</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">300.00</td></tr><tr id="tbl_row39" onmouseover="tbl_row39.bgColor='#71C1FF'" onmouseout="tbl_row39.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">410s6</td><td align="left">IM injection</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">75.00</td></tr><tr id="tbl_row40" onmouseover="tbl_row40.bgColor='#71C1FF'" onmouseout="tbl_row40.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">411s2</td><td align="left">IV injection</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">100.00</td></tr><tr id="tbl_row41" onmouseover="tbl_row41.bgColor='#71C1FF'" onmouseout="tbl_row41.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">411s5</td><td align="left">IV injection</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">100.00</td></tr><tr id="tbl_row42" onmouseover="tbl_row42.bgColor='#71C1FF'" onmouseout="tbl_row42.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">41s11</td><td align="left">Blood Film</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row43" onmouseover="tbl_row43.bgColor='#71C1FF'" onmouseout="tbl_row43.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">425s1</td><td align="left">Consultancy of Endocronlogist</td><td align="right" nowrap="nowrap">12.00</td><td align="right" nowrap="nowrap">11,400.00</td></tr><tr id="tbl_row44" onmouseover="tbl_row44.bgColor='#71C1FF'" onmouseout="tbl_row44.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">47s2</td><td align="left">CRP Quantitative</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row45" onmouseover="tbl_row45.bgColor='#71C1FF'" onmouseout="tbl_row45.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">47s3</td><td align="left">CRP Quantitative</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row46" onmouseover="tbl_row46.bgColor='#71C1FF'" onmouseout="tbl_row46.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">53s3</td><td align="left">H.pylori Ab</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row47" onmouseover="tbl_row47.bgColor='#71C1FF'" onmouseout="tbl_row47.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">53s5</td><td align="left">H.pylori Ab</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row48" onmouseover="tbl_row48.bgColor='#71C1FF'" onmouseout="tbl_row48.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">60s1</td><td align="left">FBS</td><td align="right" nowrap="nowrap">5.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row49" onmouseover="tbl_row49.bgColor='#71C1FF'" onmouseout="tbl_row49.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">60s2</td><td align="left">FBS</td><td align="right" nowrap="nowrap">14.00</td><td align="right" nowrap="nowrap">1,400.00</td></tr><tr id="tbl_row50" onmouseover="tbl_row50.bgColor='#71C1FF'" onmouseout="tbl_row50.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">60s3</td><td align="left">FBS</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">100.00</td></tr><tr id="tbl_row51" onmouseover="tbl_row51.bgColor='#71C1FF'" onmouseout="tbl_row51.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">60s4</td><td align="left">FBS</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">100.00</td></tr><tr id="tbl_row52" onmouseover="tbl_row52.bgColor='#71C1FF'" onmouseout="tbl_row52.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">61s1</td><td align="left">RBS</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">300.00</td></tr><tr id="tbl_row53" onmouseover="tbl_row53.bgColor='#71C1FF'" onmouseout="tbl_row53.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">61s10</td><td align="left">RBS</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row54" onmouseover="tbl_row54.bgColor='#71C1FF'" onmouseout="tbl_row54.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">61s2</td><td align="left">RBS</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row55" onmouseover="tbl_row55.bgColor='#71C1FF'" onmouseout="tbl_row55.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">61s3</td><td align="left">RBS</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row56" onmouseover="tbl_row56.bgColor='#71C1FF'" onmouseout="tbl_row56.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">62s1</td><td align="left">HbA1c</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">2,850.00</td></tr><tr id="tbl_row57" onmouseover="tbl_row57.bgColor='#71C1FF'" onmouseout="tbl_row57.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">62s11</td><td align="left">HbA1c</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">950.00</td></tr><tr id="tbl_row58" onmouseover="tbl_row58.bgColor='#71C1FF'" onmouseout="tbl_row58.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">62s3</td><td align="left">HbA1c</td><td align="right" nowrap="nowrap">9.00</td><td align="right" nowrap="nowrap">8,550.00</td></tr><tr id="tbl_row59" onmouseover="tbl_row59.bgColor='#71C1FF'" onmouseout="tbl_row59.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">62s4</td><td align="left">HbA1c</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">950.00</td></tr><tr id="tbl_row60" onmouseover="tbl_row60.bgColor='#71C1FF'" onmouseout="tbl_row60.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">62s5</td><td align="left">HbA1c</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">950.00</td></tr><tr id="tbl_row61" onmouseover="tbl_row61.bgColor='#71C1FF'" onmouseout="tbl_row61.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">64s10</td><td align="left">SGOT</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row62" onmouseover="tbl_row62.bgColor='#71C1FF'" onmouseout="tbl_row62.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">64s3</td><td align="left">SGOT</td><td align="right" nowrap="nowrap">4.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row63" onmouseover="tbl_row63.bgColor='#71C1FF'" onmouseout="tbl_row63.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">64s5</td><td align="left">SGOT</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row64" onmouseover="tbl_row64.bgColor='#71C1FF'" onmouseout="tbl_row64.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">64s6</td><td align="left">SGOT</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row65" onmouseover="tbl_row65.bgColor='#71C1FF'" onmouseout="tbl_row65.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">65s11</td><td align="left">SGPT</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row66" onmouseover="tbl_row66.bgColor='#71C1FF'" onmouseout="tbl_row66.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">65s2</td><td align="left">SGPT</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row67" onmouseover="tbl_row67.bgColor='#71C1FF'" onmouseout="tbl_row67.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">65s4</td><td align="left">SGPT</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row68" onmouseover="tbl_row68.bgColor='#71C1FF'" onmouseout="tbl_row68.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">65s6</td><td align="left">SGPT</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row69" onmouseover="tbl_row69.bgColor='#71C1FF'" onmouseout="tbl_row69.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">65s7</td><td align="left">SGPT</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row70" onmouseover="tbl_row70.bgColor='#71C1FF'" onmouseout="tbl_row70.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">66s12</td><td align="left">ALP</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row71" onmouseover="tbl_row71.bgColor='#71C1FF'" onmouseout="tbl_row71.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">66s4</td><td align="left">ALP</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row72" onmouseover="tbl_row72.bgColor='#71C1FF'" onmouseout="tbl_row72.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">66s5</td><td align="left">ALP</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row73" onmouseover="tbl_row73.bgColor='#71C1FF'" onmouseout="tbl_row73.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">66s7</td><td align="left">ALP</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row74" onmouseover="tbl_row74.bgColor='#71C1FF'" onmouseout="tbl_row74.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">66s8</td><td align="left">ALP</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row75" onmouseover="tbl_row75.bgColor='#71C1FF'" onmouseout="tbl_row75.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">67s13</td><td align="left">Bilirubin (T)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row76" onmouseover="tbl_row76.bgColor='#71C1FF'" onmouseout="tbl_row76.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">67s5</td><td align="left">Bilirubin (T)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row77" onmouseover="tbl_row77.bgColor='#71C1FF'" onmouseout="tbl_row77.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">67s6</td><td align="left">Bilirubin (T)</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row78" onmouseover="tbl_row78.bgColor='#71C1FF'" onmouseout="tbl_row78.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">67s8</td><td align="left">Bilirubin (T)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row79" onmouseover="tbl_row79.bgColor='#71C1FF'" onmouseout="tbl_row79.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">67s9</td><td align="left">Bilirubin (T)</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row80" onmouseover="tbl_row80.bgColor='#71C1FF'" onmouseout="tbl_row80.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">68s10</td><td align="left">Bilirubin (D)</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row81" onmouseover="tbl_row81.bgColor='#71C1FF'" onmouseout="tbl_row81.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">68s14</td><td align="left">Bilirubin (D)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row82" onmouseover="tbl_row82.bgColor='#71C1FF'" onmouseout="tbl_row82.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">68s6</td><td align="left">Bilirubin (D)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row83" onmouseover="tbl_row83.bgColor='#71C1FF'" onmouseout="tbl_row83.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">68s7</td><td align="left">Bilirubin (D)</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row84" onmouseover="tbl_row84.bgColor='#71C1FF'" onmouseout="tbl_row84.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">68s9</td><td align="left">Bilirubin (D)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row85" onmouseover="tbl_row85.bgColor='#71C1FF'" onmouseout="tbl_row85.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">72s1</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row86" onmouseover="tbl_row86.bgColor='#71C1FF'" onmouseout="tbl_row86.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">72s11</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row87" onmouseover="tbl_row87.bgColor='#71C1FF'" onmouseout="tbl_row87.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">72s2</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row88" onmouseover="tbl_row88.bgColor='#71C1FF'" onmouseout="tbl_row88.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">72s3</td><td align="left">BUN</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row89" onmouseover="tbl_row89.bgColor='#71C1FF'" onmouseout="tbl_row89.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">72s4</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row90" onmouseover="tbl_row90.bgColor='#71C1FF'" onmouseout="tbl_row90.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">72s5</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row91" onmouseover="tbl_row91.bgColor='#71C1FF'" onmouseout="tbl_row91.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">72s7</td><td align="left">BUN</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row92" onmouseover="tbl_row92.bgColor='#71C1FF'" onmouseout="tbl_row92.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">72s8</td><td align="left">BUN</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row93" onmouseover="tbl_row93.bgColor='#71C1FF'" onmouseout="tbl_row93.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">73s1</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row94" onmouseover="tbl_row94.bgColor='#71C1FF'" onmouseout="tbl_row94.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">73s12</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row95" onmouseover="tbl_row95.bgColor='#71C1FF'" onmouseout="tbl_row95.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">73s2</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row96" onmouseover="tbl_row96.bgColor='#71C1FF'" onmouseout="tbl_row96.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">73s4</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">750.00</td></tr><tr id="tbl_row97" onmouseover="tbl_row97.bgColor='#71C1FF'" onmouseout="tbl_row97.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">73s5</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row98" onmouseover="tbl_row98.bgColor='#71C1FF'" onmouseout="tbl_row98.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">73s6</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row99" onmouseover="tbl_row99.bgColor='#71C1FF'" onmouseout="tbl_row99.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">73s8</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row100" onmouseover="tbl_row100.bgColor='#71C1FF'" onmouseout="tbl_row100.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">73s9</td><td align="left">Creatinine</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row101" onmouseover="tbl_row101.bgColor='#71C1FF'" onmouseout="tbl_row101.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">74s1</td><td align="left">Uric Acid</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row102" onmouseover="tbl_row102.bgColor='#71C1FF'" onmouseout="tbl_row102.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">76s11</td><td align="left">Triglyceride (TG)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row103" onmouseover="tbl_row103.bgColor='#71C1FF'" onmouseout="tbl_row103.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">76s13</td><td align="left">Triglyceride (TG)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row104" onmouseover="tbl_row104.bgColor='#71C1FF'" onmouseout="tbl_row104.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">76s4</td><td align="left">Triglyceride (TG)</td><td align="right" nowrap="nowrap">4.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row105" onmouseover="tbl_row105.bgColor='#71C1FF'" onmouseout="tbl_row105.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">76s6</td><td align="left">Triglyceride (TG)</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row106" onmouseover="tbl_row106.bgColor='#71C1FF'" onmouseout="tbl_row106.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">77s12</td><td align="left">Cholesterol</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row107" onmouseover="tbl_row107.bgColor='#71C1FF'" onmouseout="tbl_row107.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">77s14</td><td align="left">Cholesterol</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row108" onmouseover="tbl_row108.bgColor='#71C1FF'" onmouseout="tbl_row108.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">77s5</td><td align="left">Cholesterol</td><td align="right" nowrap="nowrap">4.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row109" onmouseover="tbl_row109.bgColor='#71C1FF'" onmouseout="tbl_row109.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">77s7</td><td align="left">Cholesterol</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">250.00</td></tr><tr id="tbl_row110" onmouseover="tbl_row110.bgColor='#71C1FF'" onmouseout="tbl_row110.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">78s13</td><td align="left">HDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row111" onmouseover="tbl_row111.bgColor='#71C1FF'" onmouseout="tbl_row111.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">78s15</td><td align="left">HDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row112" onmouseover="tbl_row112.bgColor='#71C1FF'" onmouseout="tbl_row112.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">78s3</td><td align="left">HDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row113" onmouseover="tbl_row113.bgColor='#71C1FF'" onmouseout="tbl_row113.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">78s6</td><td align="left">HDL</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row114" onmouseover="tbl_row114.bgColor='#71C1FF'" onmouseout="tbl_row114.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">78s9</td><td align="left">HDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row115" onmouseover="tbl_row115.bgColor='#71C1FF'" onmouseout="tbl_row115.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">79s14</td><td align="left">LDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row116" onmouseover="tbl_row116.bgColor='#71C1FF'" onmouseout="tbl_row116.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">79s16</td><td align="left">LDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row117" onmouseover="tbl_row117.bgColor='#71C1FF'" onmouseout="tbl_row117.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">79s2</td><td align="left">LDL</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">1,000.00</td></tr><tr id="tbl_row118" onmouseover="tbl_row118.bgColor='#71C1FF'" onmouseout="tbl_row118.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">79s7</td><td align="left">LDL</td><td align="right" nowrap="nowrap">3.00</td><td align="right" nowrap="nowrap">1,500.00</td></tr><tr id="tbl_row119" onmouseover="tbl_row119.bgColor='#71C1FF'" onmouseout="tbl_row119.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">79s8</td><td align="left">LDL</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">500.00</td></tr><tr id="tbl_row120" onmouseover="tbl_row120.bgColor='#71C1FF'" onmouseout="tbl_row120.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">87s1</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row121" onmouseover="tbl_row121.bgColor='#71C1FF'" onmouseout="tbl_row121.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">87s11</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row122" onmouseover="tbl_row122.bgColor='#71C1FF'" onmouseout="tbl_row122.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">87s16</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row123" onmouseover="tbl_row123.bgColor='#71C1FF'" onmouseout="tbl_row123.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">87s3</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row124" onmouseover="tbl_row124.bgColor='#71C1FF'" onmouseout="tbl_row124.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">87s4</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">400.00</td></tr><tr id="tbl_row125" onmouseover="tbl_row125.bgColor='#71C1FF'" onmouseout="tbl_row125.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">87s5</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row126" onmouseover="tbl_row126.bgColor='#71C1FF'" onmouseout="tbl_row126.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">87s6</td><td align="left">Urinalysis</td><td align="right" nowrap="nowrap">1.00</td><td align="right" nowrap="nowrap">200.00</td></tr><tr id="tbl_row127" onmouseover="tbl_row127.bgColor='#71C1FF'" onmouseout="tbl_row127.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">9s1</td><td align="left">Consultancy of Internist, Endocrinologist</td><td align="right" nowrap="nowrap">2.00</td><td align="right" nowrap="nowrap">1,900.00</td></tr><tr><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">242.00</td><td align="right" class="StyleReportSummaryInLineFooterTd">111,325.00</td></tr><tr><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">242.00</td><td align="right" class="StyleReportSummaryFooterTd">111,325.00</td></tr> 
+ <!--# END DETAIL ROWS #--> 
+ 
+ <!--# FOOTER #-->  
+	</tbody><tfoot>
+		<tr>
+			<td colspan="4" align="right">
+			<table width="100%" border="0">
+  <tbody><tr>
+    <td align="left">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="right">&nbsp;</td>
+  </tr>
+  <tr class="StyleReportFooterNotesTd">
+    <td align="left" width="20%">2026-09-29</td>
+    <td align="center" width="60%">For Managment Purposes Only</td>
+    <td align="right" width="20%">Powered by MarakiErp(Beta) - 2012</td>
+  </tr>
+</tbody></table></td>
+		</tr>
+  </tfoot></table>
+ <!--# END FOOTER #-->
+ 
+<!--# END  REPORT DATA #--> 
+</form>
+<!--<div id="Layer2"></div>-->
+
+
+</body></html>

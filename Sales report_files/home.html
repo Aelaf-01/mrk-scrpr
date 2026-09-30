@@ -1,0 +1,723 @@
+
+<!-- saved from url=(0103)http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php?sel_report_ID=001-07-0000000001 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!--# STYLES #-->
+<script type="text/javascript" language="JavaScript">
+<!--
+//	JS strings
+	var l_lang = "en_US";
+	var l_sel_date = "Select Date";
+	var l_not_allowed = "This date is not allowed to be selected";
+	var l_date_before = "Please choose a date before %s";
+	var l_date_after = "Please choose a date after %s";
+	var l_date_between = "Please choose a date between\n%s and %s";
+	var l_use_ymd_drop = "0";
+	var l_day = "Day";
+	var l_month = "Month";
+	var l_year = "Year";
+//	Long Month Names
+	var l_january = "January";
+	var l_february = "February";
+	var l_march = "March";
+	var l_april = "April";
+	var l_may = "May";
+	var l_june = "June";
+	var l_july = "July";
+	var l_august = "August";
+	var l_september = "September";
+	var l_october = "October";
+	var l_november = "November";
+	var l_december = "December";
+if(l_lang == "el_GR"){
+//	Date Month Names Greek
+	var l_januaryu = "";
+	var l_februaryu = "";
+	var l_marchu = "";
+	var l_aprilu = "";
+	var l_mayu = "";
+	var l_juneu = "";
+	var l_julyu = "";
+	var l_augustu = "";
+	var l_septemberu = "";
+	var l_octoberu = "";
+	var l_novemberu = "";
+	var l_decemberu = "";
+}
+//	Short Month Names
+	var s_jan = "Jan";
+	var s_feb = "Feb";
+	var s_mar = "Mar";
+	var s_apr = "Apr";
+	var s_may = "May";
+	var s_jun = "Jun";
+	var s_jul = "Jul";
+	var s_aug = "Aug";
+	var s_sep = "Sep";
+	var s_oct = "Oct";
+	var s_nov = "Nov";
+	var s_dec = "Dec";
+//	Long Day Names
+	var l_monday = "Monday";
+	var l_tuesday = "Tuesday";
+	var l_wednesday = "Wednesday";
+	var l_thursday = "Thursday";
+	var l_friday = "Friday";
+	var l_saturday = "Saturday";
+	var l_sunday = "Sunday";
+//	Short Day Names
+	var s_mon = "Mo";
+	var s_tue = "Tu";
+	var s_wed = "We";
+	var s_thu = "Th";
+	var s_fri = "Fr";
+	var s_sat = "Sa";
+	var s_sun = "Su";
+// -->
+</script>
+<script language="javascript" src="./calendar.js.download"></script>
+	
+<script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+function MM_scanStyles(obj, prop) { //v8.0
+  var inlineStyle = null; var ccProp = prop; var dash = ccProp.indexOf("-");
+  while (dash != -1){ccProp = ccProp.substring(0, dash) + ccProp.substring(dash+1,dash+2).toUpperCase() + ccProp.substring(dash+2); dash = ccProp.indexOf("-");}
+  inlineStyle = eval("obj.style." + ccProp);
+  if(inlineStyle) return inlineStyle;
+  var ss = document.styleSheets;
+  for (var x = 0; x < ss.length; x++) { var rules = ss[x].cssRules;
+	for (var y = 0; y < rules.length; y++) { var z = rules[y].style;
+	  if(z[prop] && (rules[y].selectorText == '*[ID"' + obj.id + '"]')) {
+        return z[prop];
+  }  }  }  return "";
+}
+
+function MM_getProp(obj, prop) { //v8.0
+  if (!obj) return ("");
+  if (prop == "L") return obj.offsetLeft;
+  else if (prop == "T") return obj.offsetTop;
+  else if (prop == "W") return obj.offsetWidth;
+  else if (prop == "H") return obj.offsetHeight;
+  else {
+    if (typeof(window.getComputedStyle) == "undefined") {
+	    if (typeof(obj.currentStyle) == "undefined"){
+		    if (prop == "P") return MM_scanStyles(obj,"position");
+        else if (prop == "Z") return MM_scanStyles(obj,"z-index");
+        else if (prop == "V") return MM_scanStyles(obj,"visibility");
+	    } else {
+	      if (prop == "P") return obj.currentStyle.position;
+        else if (prop == "Z") return obj.currentStyle.zIndex;
+        else if (prop == "V") return obj.currentStyle.visibility;
+	    }
+    } else {
+	    if (prop == "P") return window.getComputedStyle(obj,null).getPropertyValue("position");
+      else if (prop == "Z") return window.getComputedStyle(obj,null).getPropertyValue("z-index");
+      else if (prop == "V") return window.getComputedStyle(obj,null).getPropertyValue("visibility");
+    }
+  }
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v8.0
+  //Copyright 2005 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,curLeft,curTop,IE=document.all,NS4=document.layers;
+  var NS6=(!IE&&document.getElementById), NS=(NS4||NS6); if (!IE && !NS) return false;
+  retVal = true; if(IE && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS4) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else {
+        if (NS6) { var spns = getElementsByTagName("span"); var all = getElementsByTagName("div"); 
+          for (i=0;i<spns.length;i++) if (MM_getProp(spns[i],'P')) allLayers[allLayers.length]=spns[i];}
+        for (i=0;i<all.length;i++) {
+	  if (NS4){if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+          else if (MM_getProp(all[i],'P')) allLayers[allLayers.length]=all[i]; 
+        }
+    } }
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+  
+    curDrag.MM_oldZ = (NS4)?curDrag.zIndex:MM_getProp(curDrag,'Z');
+    curLeft= (NS4)?curDrag.left:MM_getProp(curDrag,'L');
+    if (String(curLeft)=="NaN") curLeft=0; curDrag.MM_startL = curLeft;
+    curTop = (NS4)?curDrag.top:MM_getProp(curDrag,'T');
+    if (String(curTop)=="NaN") curTop=0; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop-cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop+cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS4)?aLayer.zIndex:MM_getProp(aLayer,'Z');
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = ((NS4)?aLayer.visibility:MM_getProp(aLayer,'V')).indexOf('hid') == -1;
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (NS6) { parentLayer = aLayer.parentNode;
+            while (parentLayer != null && parentLayer != document && MM_getProp(parentLayer,'P')) {
+              parentL += parseInt(MM_getProp(parentLayer,'L')); parentT += parseInt(MM_getProp(parentLayer,'T'));
+              parentLayer = parentLayer.parentNode;
+              if (parentLayer==document) parentLayer = null;
+          } } else if (IE) { parentLayer = aLayer.parentElement;       
+            while (parentLayer != null && MM_getProp(parentLayer,'P')) {
+              parentL += MM_getProp(parentLayer,'L'); parentT += MM_getProp(parentLayer,'T');
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-((NS4)?pageX:(MM_getProp(aLayer,'L'))+parentL+MM_hLeft);
+          var tmpY=mouseY-((NS4)?pageY:(MM_getProp(aLayer,'T'))+parentT+MM_hTop);
+          if (String(tmpX)=="NaN") tmpX=0; if (String(tmpY)=="NaN") tmpY=0;
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += (NS4)?clip.width:MM_getProp(aLayer,'W');
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += (NS4)?clip.height:MM_getProp(aLayer,'H');
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS4) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS4)?curDrag.left:MM_getProp(curDrag,'L');
+        curTop = (NS4)?curDrag.top:MM_getProp(curDrag,'T');
+        if (String(curLeft)=="NaN") curLeft=0; if (String(curTop)=="NaN") curTop=0;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          var newZ = parseInt(document.MM_maxZ)+1;
+          eval('curDrag.'+((NS4)?'':'style.')+'zIndex=newZ');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS4&&!NS6) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        var newLeft = mouseX-MM_oldX; var newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS4) {left = newLeft; top = newTop;}
+        else if (NS6){style.left = newLeft + "px"; style.top = newTop + "px";}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS4)?left:MM_getProp(document.MM_curDrag,'L')),2)+
+             Math.pow(MM_targT-((NS4)?top:MM_getProp(document.MM_curDrag,'T')),2))<=MM_tol) {
+          if (NS4) {left = MM_targL; top = MM_targT;}
+          else if (NS6) {style.left = MM_targL + "px"; style.top = MM_targT + "px";}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS4) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</script>
+        <link href="./table_styles.css" rel="stylesheet" type="text/css">
+        <link href="./border.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="./style.css">
+		<script type="text/javascript" src="./script.js.download"></script>
+		<style type="text/css">
+		
+		<style type="text/css">
+<!--
+
+.a4_size {
+	position: absolute;
+	width: 7.89in;
+	top: 0px;
+	height: 10in;
+	overflow: visible;
+}
+
+#Layer1 {
+	position:absolute;
+	width:auto;
+	z-index:57;
+	display: inline;
+	left: 262px;
+	top: 101px;
+	visibility: visible;
+}
+
+-->
+        </style>
+<style type="text/css">
+<!--
+.StyleHidden
+{
+	visibility:hidden;
+	width:0.001;
+}
+
+.StyleVisible
+{
+	visibility:visible;
+}
+
+.styleCompany {
+	font-size: 12px;
+	text-align:left;
+}
+.StyleReportHead
+{
+	font-size: 12px;
+}
+.CriteriaStyle
+{
+	font-size: 14px;
+}
+.StyleReportCriteriaHeaderTr
+{
+	font-size: 10px;
+	text-align:left;
+}
+.StyleReportSummaryFooterTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	border-bottom-width: 1px;
+	border-bottom-style: double;
+	border-bottom-color: #000000;
+	
+	border-top-width: 1px;
+	border-top-style: double;
+	border-top-color: #000000;
+}
+
+.StyleReportSummaryInLineFooterTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.StyleReportFooterNotesTd
+{
+	font-size: 12px;
+	font-weight:bold;
+	font-style:italic;
+}
+.StyleReportDataHeaderTd
+{
+	
+}
+.StyleReportDataHeaderTr
+{
+	font-weight:bold;
+	text-align:left;
+	font-size:14px;
+}
+.StyleReportDataTr
+{
+	font-size: 12px;
+}
+.StyleReportDataHeaderTd
+{
+	font-size: 12px;
+}
+
+.select_comb{
+	width: 200px;
+}
+.select_text{
+	width: 200px;
+}
+.select_text_date{
+	width: 200px;
+}
+
+.StyleOptionsTable
+{
+	font-size: 12px;
+	border: medium solid #003366;
+}
+
+.StyleButtonOptions
+{
+	width: 15px;
+	height: 15px;
+	text-align:center;
+	vertical-align:top;
+	
+}
+.StyleOptionsTable .style15 {
+	border-bottom-width: thin;
+	border-bottom-style: double;
+	border-bottom-color: #000000;
+}
+.style1 {color: #FFFFFF}
+#Layer2 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:58;
+	visibility: visible;
+}
+-->
+</style>
+ <!--# END STYLES #-->
+  <title>Sales Report</title>
+</head>
+<body onload="MM_dragLayer('Layer1','',0,0,900,30,true,false,-1,-1,-1,-1,false,false,0,'',false,'');MM_showHideLayers('Layer1','','hide')" "="">
+
+<form action="http://192.168.1.24/MarakiReports2012/reports/MasterReportSummary03.php" name="frm_save" method="POST">	
+<input type="hidden" name="sel_report_ID" id="sel_report_ID" value="001-07-0000000001">
+<!--# REPORT VARIABLES OPTIONS #-->
+<div id="Layer1" style="visibility: hidden;">
+ <table width="1" height="1" border="0" cellpadding="3" cellspacing="0" bgcolor="#D8EDFF" class="StyleOptionsTable">	
+	<input type="hidden" id="mode" name="mode" value="0">
+  <tbody><tr>
+    <td colspan="5" align="center" bgcolor="#003366" class="style15 style1" mouseover="cursor.move">Option for Sales Report	<input type="hidden" id="show_hide_option" name="show_hide_option" value="0">	
+	<span align="right"><input type="button" id="close_option" name="close_option" value="X" onclick="MM_showHideLayers('Layer1','','hide');"></span></td>
+	
+  </tr>				
+ <tr><td nowrap="nowrap" colspan="5">---</td></tr>  
+<!--# END REPORT VARIABLE OPTIONS #-->	
+
+<!--# REPORT OPTIONS #-->
+  		
+										
+					<tr id="tbl_op_row0" onmouseover="tbl_op_row0.bgColor='#CCCCCC'" onmouseout="tbl_op_row0.bgColor=''" bgcolor="">
+					<td nowrap="nowrap">Ref Note</td>
+					<td>
+						<select name="op_ref_note" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_ref_note" class="select_text" value="Like%">					</td>
+					<td><input name="txt_ref_note" class="select_text" type="text" id="txt_ref_note" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+										
+					<tr id="tbl_op_row1" onmouseover="tbl_op_row1.bgColor='#CCCCCC'" onmouseout="tbl_op_row1.bgColor=''" bgcolor="">
+					<td nowrap="nowrap">FsNo</td>
+					<td>
+						<select name="op_ref_note2" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_ref_note2" class="select_text" value="Like%">					</td>
+					<td><input name="txt_ref_note2" class="select_text" type="text" id="txt_ref_note2" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+						 
+				
+				 
+				
+								
+					<tr id="tbl_op_row2" onmouseover="tbl_op_row2.bgColor='#CCCCCC'" onmouseout="tbl_op_row2.bgColor=''" bgcolor="">
+					<td nowrap="nowrap">Transaction Date</td>
+					<td>
+						<select name="op_trans_date" size="1" class="StyleHidden">
+							<option value="Between">Between</option>
+							<option value="&gt;">&gt;</option>
+							<option value="&gt;=">&gt;</option>
+							<option value="&lt;">&lt;</option>
+							<option value="&lt;=">&lt;=</option>
+							<option value="!=">!=</option>
+						</select>
+						<input type="hidden" class="select_text_date" name="op_trans_date" value="Between">					</td>
+					<td nowrap="nowrap" align="right">
+					<table>
+						<tbody><tr>
+							<td nowrap="nowrap">
+						<input type="hidden" name="txt_trans_date" id="txt_trans_date" value="2026-09-29"><input type="hidden" name="txt_trans_date_dp" id="txt_trans_date_dp" value="1"><input type="hidden" name="txt_trans_date_year_start" id="txt_trans_date_year_start" value="2000"><input type="hidden" name="txt_trans_date_year_end" id="txt_trans_date_year_end" value="2026"><input type="hidden" name="txt_trans_date_da1" id="txt_trans_date_da1" value=""><input type="hidden" name="txt_trans_date_da2" id="txt_trans_date_da2" value=""><input type="hidden" name="txt_trans_date_sna" id="txt_trans_date_sna" value=""><input type="hidden" name="txt_trans_date_aut" id="txt_trans_date_aut" value=""><input type="hidden" name="txt_trans_date_frm" id="txt_trans_date_frm" value=""><input type="hidden" name="txt_trans_date_tar" id="txt_trans_date_tar" value=""><input type="hidden" name="txt_trans_date_inp" id="txt_trans_date_inp" value=""><input type="hidden" name="txt_trans_date_fmt" id="txt_trans_date_fmt" value="F j, Y"><input type="hidden" name="txt_trans_date_dis" id="txt_trans_date_dis" value=""><input type="hidden" name="txt_trans_date_pr1" id="txt_trans_date_pr1" value=""><input type="hidden" name="txt_trans_date_pr2" id="txt_trans_date_pr2" value=""><input type="hidden" name="txt_trans_date_prv" id="txt_trans_date_prv" value=""><input type="hidden" name="txt_trans_date_pth" id="txt_trans_date_pth" value="calendar/"><input type="hidden" name="txt_trans_date_spd" id="txt_trans_date_spd" value="[[],[],[]]"><input type="hidden" name="txt_trans_date_spt" id="txt_trans_date_spt" value="0"><input type="hidden" name="txt_trans_date_och" id="txt_trans_date_och" value=""><input type="hidden" name="txt_trans_date_str" id="txt_trans_date_str" value="0"><input type="hidden" name="txt_trans_date_rtl" id="txt_trans_date_rtl" value="0"><input type="hidden" name="txt_trans_date_wks" id="txt_trans_date_wks" value=""><input type="hidden" name="txt_trans_date_int" id="txt_trans_date_int" value="1"><input type="hidden" name="txt_trans_date_hid" id="txt_trans_date_hid" value="1"><input type="hidden" name="txt_trans_date_hdt" id="txt_trans_date_hdt" value="1000"><input type="hidden" name="txt_trans_date_hl" id="txt_trans_date_hl" value="en_US"><div style="position: relative; z-index: 1; float: left;" id="container_txt_trans_date" onmouseover="javascript:focusCalendar('txt_trans_date');" onmouseout="javascript:unFocusCalendar('txt_trans_date', 1);"> <a href="javascript:toggleCalendar('txt_trans_date', 1, 1000);"><span id="divCalendar_txt_trans_date_lbl" class="date-tccontainer">September 29, 2026</span></a> <a href="javascript:toggleCalendar('txt_trans_date', 1, 1000);"><img src="./iconCalendar.gif" id="tcbtn_txt_trans_date" name="tcbtn_txt_trans_date" border="0" align="absmiddle"></a><div id="div_txt_trans_date" style="position: absolute; visibility: hidden; z-index: 100; top: 18px; left: 0px; width: 164px; height: 190px;" class="div_calendar calendar-border" onmouseout="javascript:prepareHide('txt_trans_date', 1000);" onmouseover="javascript:cancelHide('txt_trans_date');"><iframe id="txt_trans_date_frame" src="./calendar_form.html" frameborder="0" scrolling="no" allowtransparency="true" width="100%" height="100%" style="z-index: 100;"></iframe></div></div>							</td>
+						</tr><tr>
+					</tr></tbody></table>		</td>
+					<td>&nbsp;</td>
+					<td nowrap="nowrap" align="right">
+										<table>
+						<tbody><tr>
+							<td nowrap="nowrap">
+						<input type="hidden" name="txt2_trans_date" id="txt2_trans_date" value="2026-09-29"><input type="hidden" name="txt2_trans_date_dp" id="txt2_trans_date_dp" value="1"><input type="hidden" name="txt2_trans_date_year_start" id="txt2_trans_date_year_start" value="2000"><input type="hidden" name="txt2_trans_date_year_end" id="txt2_trans_date_year_end" value="2026"><input type="hidden" name="txt2_trans_date_da1" id="txt2_trans_date_da1" value=""><input type="hidden" name="txt2_trans_date_da2" id="txt2_trans_date_da2" value=""><input type="hidden" name="txt2_trans_date_sna" id="txt2_trans_date_sna" value=""><input type="hidden" name="txt2_trans_date_aut" id="txt2_trans_date_aut" value=""><input type="hidden" name="txt2_trans_date_frm" id="txt2_trans_date_frm" value=""><input type="hidden" name="txt2_trans_date_tar" id="txt2_trans_date_tar" value=""><input type="hidden" name="txt2_trans_date_inp" id="txt2_trans_date_inp" value=""><input type="hidden" name="txt2_trans_date_fmt" id="txt2_trans_date_fmt" value="F j, Y"><input type="hidden" name="txt2_trans_date_dis" id="txt2_trans_date_dis" value=""><input type="hidden" name="txt2_trans_date_pr1" id="txt2_trans_date_pr1" value=""><input type="hidden" name="txt2_trans_date_pr2" id="txt2_trans_date_pr2" value=""><input type="hidden" name="txt2_trans_date_prv" id="txt2_trans_date_prv" value=""><input type="hidden" name="txt2_trans_date_pth" id="txt2_trans_date_pth" value="calendar/"><input type="hidden" name="txt2_trans_date_spd" id="txt2_trans_date_spd" value="[[],[],[]]"><input type="hidden" name="txt2_trans_date_spt" id="txt2_trans_date_spt" value="0"><input type="hidden" name="txt2_trans_date_och" id="txt2_trans_date_och" value=""><input type="hidden" name="txt2_trans_date_str" id="txt2_trans_date_str" value="0"><input type="hidden" name="txt2_trans_date_rtl" id="txt2_trans_date_rtl" value="0"><input type="hidden" name="txt2_trans_date_wks" id="txt2_trans_date_wks" value=""><input type="hidden" name="txt2_trans_date_int" id="txt2_trans_date_int" value="1"><input type="hidden" name="txt2_trans_date_hid" id="txt2_trans_date_hid" value="1"><input type="hidden" name="txt2_trans_date_hdt" id="txt2_trans_date_hdt" value="1000"><input type="hidden" name="txt2_trans_date_hl" id="txt2_trans_date_hl" value="en_US"><div style="position: relative; z-index: 1; float: left;" id="container_txt2_trans_date" onmouseover="javascript:focusCalendar('txt2_trans_date');" onmouseout="javascript:unFocusCalendar('txt2_trans_date', 1);"> <a href="javascript:toggleCalendar('txt2_trans_date', 1, 1000);"><span id="divCalendar_txt2_trans_date_lbl" class="date-tccontainer">September 29, 2026</span></a> <a href="javascript:toggleCalendar('txt2_trans_date', 1, 1000);"><img src="./iconCalendar.gif" id="tcbtn_txt2_trans_date" name="tcbtn_txt2_trans_date" border="0" align="absmiddle"></a><div id="div_txt2_trans_date" style="position: absolute; visibility: hidden; z-index: 100; top: 18px; left: 0px; width: 164px; height: 190px;" class="div_calendar calendar-border" onmouseout="javascript:prepareHide('txt2_trans_date', 1000);" onmouseover="javascript:cancelHide('txt2_trans_date');"><iframe id="txt2_trans_date_frame" src="./calendar_form(1).html" frameborder="0" scrolling="no" allowtransparency="true" width="100%" height="100%" style="z-index: 100;"></iframe></div></div>							</td>
+						</tr><tr>
+					</tr></tbody></table>		
+										</td>
+					</tr>
+				 
+				
+				 
+								
+										
+					<tr id="tbl_op_row3" onmouseover="tbl_op_row3.bgColor='#CCCCCC'" onmouseout="tbl_op_row3.bgColor=''">
+					<td nowrap="nowrap">Reference</td>
+					<td>
+						<select name="op_reference" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_reference" class="select_text" value="Like%">					</td>
+					<td><input name="txt_reference" class="select_text" type="text" id="txt_reference" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+										
+					<tr id="tbl_op_row4" onmouseover="tbl_op_row4.bgColor='#CCCCCC'" onmouseout="tbl_op_row4.bgColor=''">
+					<td nowrap="nowrap">Customer</td>
+					<td>
+						<select name="op_billto_name" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_billto_name" class="select_text" value="Like%">					</td>
+					<td><input name="txt_billto_name" class="select_text" type="text" id="txt_billto_name" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+										
+					<tr id="tbl_op_row5" onmouseover="tbl_op_row5.bgColor='#CCCCCC'" onmouseout="tbl_op_row5.bgColor=''">
+					<td nowrap="nowrap">Client</td>
+					<td>
+						<select name="op_case_description" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_case_description" class="select_text" value="Like%">					</td>
+					<td><input name="txt_case_description" class="select_text" type="text" id="txt_case_description" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+								
+					<tr id="tbl_op_row6" onmouseover="tbl_op_row6.bgColor='#CCCCCC'" onmouseout="tbl_op_row6.bgColor=''">
+				<td nowrap="nowrap">Store</td>
+				<td><select name="op_f_store_name" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_f_store_name" class="select_comb"><option value=""></option><option value="GIT">GIT</option><option value="STORE1">STORE1</option><option value="STORE2">STORE2</option><option value="STORE3">STORE3</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+											
+						 
+				
+				 
+				
+				 
+				
+								
+					<tr id="tbl_op_row11" onmouseover="tbl_op_row11.bgColor='#CCCCCC'" onmouseout="tbl_op_row11.bgColor=''">
+					<td nowrap="nowrap">Void?</td>
+					<td>&nbsp;</td>
+					<td>
+					<select name="txt_is_void">
+							<option value=""></option>
+							<option value="1">Yes</option>
+							<option value="0" selected="">No</option>
+					</select>
+					<input type="hidden" name="op_is_void" value="Between">					</td><td>&nbsp;</td>
+					<td>&nbsp;</td>
+					</tr>
+				 
+								
+					<tr id="tbl_op_row12" onmouseover="tbl_op_row12.bgColor='#CCCCCC'" onmouseout="tbl_op_row12.bgColor=''">
+				<td nowrap="nowrap">station</td>
+				<td><select name="op_station" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_station" class="select_comb"><option value=""></option><option value="0">N/A</option><option value="1">STATION 1</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+							
+					<tr id="tbl_op_row13" onmouseover="tbl_op_row13.bgColor='#CCCCCC'" onmouseout="tbl_op_row13.bgColor=''">
+				<td nowrap="nowrap">User</td>
+				<td><select name="op_i_user_ID" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_i_user_ID" class="select_comb"><option value=""></option><option value="001-01-0000000001">Super Admin</option><option value="001-01-0000000002">System Admin</option><option value="001-01-0000000003">Admin</option><option value="001-01-0000000004">Sales Operator</option><option value="001-01-0000000005">Operator</option><option value="001-01-0000000006">m</option><option value="001-01-0000000007">meaza</option><option value="001-01-0000000008">emush</option><option value="001-01-0000000009">adanu</option><option value="001-01-0000000010">meser</option><option value="001-01-0000000011">Birtukan</option><option value="001-01-0000000012">Sara</option><option value="001-01-0000000013">Aster</option><option value="001-01-0000000014">Netsanet</option><option value="001-01-0000000015">Beza</option><option value="001-01-0000000016">yemisrach</option><option value="001-01-0000000017">Misrak</option><option value="001-01-0000000018">Bereket</option><option value="001-01-0000000019">Hewan</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+							
+					<tr id="tbl_op_row14" onmouseover="tbl_op_row14.bgColor='#CCCCCC'" onmouseout="tbl_op_row14.bgColor=''">
+				<td nowrap="nowrap">Cash/Credit</td>
+				<td><select name="op_trans_type" size="1" class="StyleHidden">
+						<option value="Between">Between</option>
+						<option value="=">=</option>
+						<option value="&gt;">&gt;</option>
+						<option value="&gt;=">&gt;</option>
+						<option value="&lt;">&lt;</option>
+						<option value="&lt;=">&lt;=</option>
+						<option value="!=">!=</option>
+						
+					</select>				</td>
+				<td><select name="txt_trans_type" class="select_comb"><option value=""></option><option value="CREDIT">CREDIT</option><option value="CASH">CASH</option></select></td>
+				<td>&nbsp;</td>
+				<td>
+				&nbsp;				</td>
+			</tr>
+							
+										
+					<tr id="tbl_op_row15" onmouseover="tbl_op_row15.bgColor='#CCCCCC'" onmouseout="tbl_op_row15.bgColor=''">
+					<td nowrap="nowrap">Customer Acc#</td>
+					<td>
+						<select name="op_billto_account_no" size="1" class="StyleHidden">
+							<option value="Like%">Like%</option>
+							<option value="Between">Between</option>
+						</select>
+						<input type="hidden" name="op_billto_account_no" class="select_text" value="Like%">					</td>
+					<td><input name="txt_billto_account_no" class="select_text" type="text" id="txt_billto_account_no" value=""></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;					</td>
+					</tr>
+				 
+				
+				 
+				
+				 
+				
+				 
+																																																																																									  <tr>
+    <td colspan="5" align="center" class="style15">
+		<button type="submit">Go To Report </button>	</td>
+  </tr>	
+</tbody></table>
+</div>
+<!--# END REPORT OPTIONS #-->
+
+<!--# REPORT DATA #-->
+<!--# REPORT HEADER #-->
+		
+  <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
+   <thead>
+    <tr>
+      <td colspan="11" class="report_header"><span class="styleCompany">SENAY HIGHER CLINIC, Sales Report</span></td>
+<!--# END REPORT HEADER #-->
+
+<!--# CRITERIA HEADER #-->
+     </tr><tr>
+          <td><a href="javascript:window.print();">print out</a></td>
+          <td colspan="10" class="StyleReportCriteriaHeaderTr"><a href="javascript:MM_showHideLayers('Layer1','','show');"><span class="CriteriaStyle">Criteria:</span>   - AND Transaction Date=2026-09-29 AND Void?=0</a></td>
+      </tr>
+<!--# END CRITERIA HEADER #-->
+
+<!--# DETAIL HEADER #-->
+    <tr>
+	  </tr><tr class="StyleReportDataHeaderTr"><td align="left">Ref Note</td><td align="left">FsNo</td><td align="left">Transaction Date</td><td align="left">Reference</td><td align="left">Customer</td><td align="left">Client</td><td align="left">Store</td><td align="left">User</td><td align="right">Subtotal</td><td align="right">Tax</td><td align="right">Total</td></tr>    
+	</thead>
+ <!--# END DETAIL HEADER #--> 
+    
+ <!--# DETAIL ROWS #-->  
+ 	<tbody><tr id="tbl_row1" onmouseover="tbl_row1.bgColor='#71C1FF'" onmouseout="tbl_row1.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61667</td><td align="left">00076188</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068158</td><td align="left" nowrap="nowrap">TEDLA BEKELE DESTA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">1,500.00</td><td align="right">-</td><td align="right">1,500.00</td></tr><tr id="tbl_row2" onmouseover="tbl_row2.bgColor='#71C1FF'" onmouseout="tbl_row2.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61668</td><td align="left">00076189</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068159</td><td align="left" nowrap="nowrap">TAMIRAT ESHETU FELEKE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">25.00</td><td align="right">-</td><td align="right">25.00</td></tr><tr id="tbl_row3" onmouseover="tbl_row3.bgColor='#71C1FF'" onmouseout="tbl_row3.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61669</td><td align="left">00076190</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CRSI-ST1-01-0008214</td><td align="left" nowrap="nowrap">TAMIRAT ESHETU FELEKE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">475.00</td><td align="right">-</td><td align="right">475.00</td></tr><tr id="tbl_row4" onmouseover="tbl_row4.bgColor='#71C1FF'" onmouseout="tbl_row4.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61670</td><td align="left">00076191</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068160</td><td align="left" nowrap="nowrap">DANIEL MEDHIN HADGU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">2,700.00</td><td align="right">-</td><td align="right">2,700.00</td></tr><tr id="tbl_row5" onmouseover="tbl_row5.bgColor='#71C1FF'" onmouseout="tbl_row5.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61671</td><td align="left">00076192</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068161</td><td align="left" nowrap="nowrap">ASNAKECH BEKELE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">2,000.00</td><td align="right">-</td><td align="right">2,000.00</td></tr><tr id="tbl_row6" onmouseover="tbl_row6.bgColor='#71C1FF'" onmouseout="tbl_row6.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61672</td><td align="left">00076193</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068162</td><td align="left" nowrap="nowrap">TINSAY FISSEHAYE WOLDU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">2,300.00</td><td align="right">-</td><td align="right">2,300.00</td></tr><tr id="tbl_row7" onmouseover="tbl_row7.bgColor='#71C1FF'" onmouseout="tbl_row7.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61673</td><td align="left">00076194</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068163</td><td align="left" nowrap="nowrap">TAMIRAT GEZAHEGN BOGALE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">950.00</td><td align="right">-</td><td align="right">950.00</td></tr><tr id="tbl_row8" onmouseover="tbl_row8.bgColor='#71C1FF'" onmouseout="tbl_row8.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61674</td><td align="left">00076195</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068164</td><td align="left" nowrap="nowrap">emebet abera h/mariam</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">100.00</td><td align="right">-</td><td align="right">100.00</td></tr><tr id="tbl_row9" onmouseover="tbl_row9.bgColor='#71C1FF'" onmouseout="tbl_row9.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61675</td><td align="left">00076196</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068165</td><td align="left" nowrap="nowrap">BEHASEN ABDI ISMAEL</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">5,900.00</td><td align="right">-</td><td align="right">5,900.00</td></tr><tr id="tbl_row10" onmouseover="tbl_row10.bgColor='#71C1FF'" onmouseout="tbl_row10.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61676</td><td align="left">00076197</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068166</td><td align="left" nowrap="nowrap">Kokeb Hagos T/Michael</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">2,000.00</td><td align="right">-</td><td align="right">2,000.00</td></tr><tr id="tbl_row11" onmouseover="tbl_row11.bgColor='#71C1FF'" onmouseout="tbl_row11.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61677</td><td align="left">00076198</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068167</td><td align="left" nowrap="nowrap">ASGIDET DEBAS KEFELA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">300.00</td><td align="right">-</td><td align="right">300.00</td></tr><tr id="tbl_row12" onmouseover="tbl_row12.bgColor='#71C1FF'" onmouseout="tbl_row12.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61678</td><td align="left">00076199</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068168</td><td align="left" nowrap="nowrap">etabezu zeleke solomon</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">4,650.00</td><td align="right">-</td><td align="right">4,650.00</td></tr><tr id="tbl_row13" onmouseover="tbl_row13.bgColor='#71C1FF'" onmouseout="tbl_row13.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61679</td><td align="left">00076200</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068169</td><td align="left" nowrap="nowrap">ALEM AREFAYNE W/SILASE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">150.00</td><td align="right">-</td><td align="right">150.00</td></tr><tr id="tbl_row14" onmouseover="tbl_row14.bgColor='#71C1FF'" onmouseout="tbl_row14.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61680</td><td align="left">00076201</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068170</td><td align="left" nowrap="nowrap">YEHUALASHET AYU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">7,450.00</td><td align="right">-</td><td align="right">7,450.00</td></tr><tr id="tbl_row15" onmouseover="tbl_row15.bgColor='#71C1FF'" onmouseout="tbl_row15.bgColor=''" bgcolor="#71C1FF" class="StyleReportDataTr"><td align="left">PAY-61681</td><td align="left">00076202</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068171</td><td align="left" nowrap="nowrap">MEKIYA HUSSEN OUMER</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row16" onmouseover="tbl_row16.bgColor='#71C1FF'" onmouseout="tbl_row16.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61682</td><td align="left">00076203</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068172</td><td align="left" nowrap="nowrap">BELAYINESH GESESE ZEWDE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">1,000.00</td><td align="right">-</td><td align="right">1,000.00</td></tr><tr id="tbl_row17" onmouseover="tbl_row17.bgColor='#71C1FF'" onmouseout="tbl_row17.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61683</td><td align="left">00076204</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068173</td><td align="left" nowrap="nowrap">ZEWDU KIDANE GIDEY</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">meaza</td><td align="right">1,250.00</td><td align="right">-</td><td align="right">1,250.00</td></tr><tr id="tbl_row18" onmouseover="tbl_row18.bgColor='#71C1FF'" onmouseout="tbl_row18.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61684</td><td align="left">00076205</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068174</td><td align="left" nowrap="nowrap">YIRGITTI BEKELE GURMU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">1,850.00</td><td align="right">-</td><td align="right">1,850.00</td></tr><tr id="tbl_row19" onmouseover="tbl_row19.bgColor='#71C1FF'" onmouseout="tbl_row19.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61685</td><td align="left">00076206</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068175</td><td align="left" nowrap="nowrap">NEBIYU T/SILASE AMBELU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">5,150.00</td><td align="right">-</td><td align="right">5,150.00</td></tr><tr id="tbl_row20" onmouseover="tbl_row20.bgColor='#71C1FF'" onmouseout="tbl_row20.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61686</td><td align="left">00076207</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068176</td><td align="left" nowrap="nowrap">MESERET REGASSA GEBISA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row21" onmouseover="tbl_row21.bgColor='#71C1FF'" onmouseout="tbl_row21.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61687</td><td align="left">00076208</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068177</td><td align="left" nowrap="nowrap">WORKE TESHOME ZEWDE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">100.00</td><td align="right">-</td><td align="right">100.00</td></tr><tr id="tbl_row22" onmouseover="tbl_row22.bgColor='#71C1FF'" onmouseout="tbl_row22.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61688</td><td align="left">00076209</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068178</td><td align="left" nowrap="nowrap">MEKIYA HUSSEN OUMER</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">200.00</td><td align="right">-</td><td align="right">200.00</td></tr><tr id="tbl_row23" onmouseover="tbl_row23.bgColor='#71C1FF'" onmouseout="tbl_row23.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61691</td><td align="left">00076210</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068179</td><td align="left" nowrap="nowrap">Niyat Seid Oumer</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">100.00</td><td align="right">-</td><td align="right">100.00</td></tr><tr id="tbl_row24" onmouseover="tbl_row24.bgColor='#71C1FF'" onmouseout="tbl_row24.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61695</td><td align="left">00076212</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068181</td><td align="left" nowrap="nowrap">REYAN SABIT NUR</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">3,500.00</td><td align="right">-</td><td align="right">3,500.00</td></tr><tr id="tbl_row25" onmouseover="tbl_row25.bgColor='#71C1FF'" onmouseout="tbl_row25.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61696</td><td align="left">00076211</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068180</td><td align="left" nowrap="nowrap">MESERET REGASSA GEBISA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">2,200.00</td><td align="right">-</td><td align="right">2,200.00</td></tr><tr id="tbl_row26" onmouseover="tbl_row26.bgColor='#71C1FF'" onmouseout="tbl_row26.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61699</td><td align="left">00076213</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068182</td><td align="left" nowrap="nowrap">BELIYU WEDAJO GEGIZO</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">950.00</td><td align="right">-</td><td align="right">950.00</td></tr><tr id="tbl_row27" onmouseover="tbl_row27.bgColor='#71C1FF'" onmouseout="tbl_row27.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61700</td><td align="left">00076214</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068183</td><td align="left" nowrap="nowrap">ATELABACHEW TADESSE YERE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row28" onmouseover="tbl_row28.bgColor='#71C1FF'" onmouseout="tbl_row28.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61703</td><td align="left">00076215</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068184</td><td align="left" nowrap="nowrap">ALEM TADESSE DAGNE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">9,550.00</td><td align="right">-</td><td align="right">9,550.00</td></tr><tr id="tbl_row29" onmouseover="tbl_row29.bgColor='#71C1FF'" onmouseout="tbl_row29.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61705</td><td align="left">00076216</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068185</td><td align="left" nowrap="nowrap">Hayiat Hussin</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row30" onmouseover="tbl_row30.bgColor='#71C1FF'" onmouseout="tbl_row30.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61706</td><td align="left">00076217</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068186</td><td align="left" nowrap="nowrap">Simon Meressa Shelemu</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row31" onmouseover="tbl_row31.bgColor='#71C1FF'" onmouseout="tbl_row31.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61707</td><td align="left">00076218</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068187</td><td align="left" nowrap="nowrap">YALGANESH DESALEGN ADUGNA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">50.00</td><td align="right">-</td><td align="right">50.00</td></tr><tr id="tbl_row32" onmouseover="tbl_row32.bgColor='#71C1FF'" onmouseout="tbl_row32.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61708</td><td align="left">00076219</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068188</td><td align="left" nowrap="nowrap">ayele gemechu dima</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">3,950.00</td><td align="right">-</td><td align="right">3,950.00</td></tr><tr id="tbl_row33" onmouseover="tbl_row33.bgColor='#71C1FF'" onmouseout="tbl_row33.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61709</td><td align="left">00076220</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068189</td><td align="left" nowrap="nowrap">BEDILU YIBELTAL KEBEDE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row34" onmouseover="tbl_row34.bgColor='#71C1FF'" onmouseout="tbl_row34.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61710</td><td align="left">00076221</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068190</td><td align="left" nowrap="nowrap">girmawit meretse berhe</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">950.00</td><td align="right">-</td><td align="right">950.00</td></tr><tr id="tbl_row35" onmouseover="tbl_row35.bgColor='#71C1FF'" onmouseout="tbl_row35.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61714</td><td align="left">00076222</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068191</td><td align="left" nowrap="nowrap">TEWODROS ADUGNA ENDALEW</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">3,750.00</td><td align="right">-</td><td align="right">3,750.00</td></tr><tr id="tbl_row36" onmouseover="tbl_row36.bgColor='#71C1FF'" onmouseout="tbl_row36.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61715</td><td align="left">00076223</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068192</td><td align="left" nowrap="nowrap">SHIMELIS SUFA AYANO</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row37" onmouseover="tbl_row37.bgColor='#71C1FF'" onmouseout="tbl_row37.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61716</td><td align="left">00076224</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068193</td><td align="left" nowrap="nowrap">ALI LIBEN SEMBERE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row38" onmouseover="tbl_row38.bgColor='#71C1FF'" onmouseout="tbl_row38.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61717</td><td align="left">00076225</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068194</td><td align="left" nowrap="nowrap">EYUOEL K/YOHANNES W/YOHANNES</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row39" onmouseover="tbl_row39.bgColor='#71C1FF'" onmouseout="tbl_row39.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61718</td><td align="left">00076226</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068195</td><td align="left" nowrap="nowrap">MISRA GIRMA ABEBE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row40" onmouseover="tbl_row40.bgColor='#71C1FF'" onmouseout="tbl_row40.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61719</td><td align="left">00076227</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068196</td><td align="left" nowrap="nowrap">MULUNESH G/TSADIK YIGEREMU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">150.00</td><td align="right">-</td><td align="right">150.00</td></tr><tr id="tbl_row41" onmouseover="tbl_row41.bgColor='#71C1FF'" onmouseout="tbl_row41.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61720</td><td align="left">00076228</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068197</td><td align="left" nowrap="nowrap">ATELABACHEW TADESSE YERE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">4,550.00</td><td align="right">-</td><td align="right">4,550.00</td></tr><tr id="tbl_row42" onmouseover="tbl_row42.bgColor='#71C1FF'" onmouseout="tbl_row42.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61721</td><td align="left">00076229</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068198</td><td align="left" nowrap="nowrap">DAWIT ALEBACHEW TEDILA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row43" onmouseover="tbl_row43.bgColor='#71C1FF'" onmouseout="tbl_row43.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61722</td><td align="left">00076230</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068199</td><td align="left" nowrap="nowrap">Hayiat Hussin</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">1,925.00</td><td align="right">-</td><td align="right">1,925.00</td></tr><tr id="tbl_row44" onmouseover="tbl_row44.bgColor='#71C1FF'" onmouseout="tbl_row44.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61723</td><td align="left">00076231</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068200</td><td align="left" nowrap="nowrap">ZULIEKA AKMEL HASSEN</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">1,050.00</td><td align="right">-</td><td align="right">1,050.00</td></tr><tr id="tbl_row45" onmouseover="tbl_row45.bgColor='#71C1FF'" onmouseout="tbl_row45.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61725</td><td align="left">00076232</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068201</td><td align="left" nowrap="nowrap">Yamrot Begashaw Aferu</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">1,550.00</td><td align="right">-</td><td align="right">1,550.00</td></tr><tr id="tbl_row46" onmouseover="tbl_row46.bgColor='#71C1FF'" onmouseout="tbl_row46.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61726</td><td align="left">00076233</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068202</td><td align="left" nowrap="nowrap">Simon Meressa Shelemu</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">2,050.00</td><td align="right">-</td><td align="right">2,050.00</td></tr><tr id="tbl_row47" onmouseover="tbl_row47.bgColor='#71C1FF'" onmouseout="tbl_row47.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61728</td><td align="left">00076234</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068203</td><td align="left" nowrap="nowrap">GIRMA MELESE MARUTA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">150.00</td><td align="right">-</td><td align="right">150.00</td></tr><tr id="tbl_row48" onmouseover="tbl_row48.bgColor='#71C1FF'" onmouseout="tbl_row48.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61729</td><td align="left">00076235</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068204</td><td align="left" nowrap="nowrap">BIRHAN WOLDU ABERA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row49" onmouseover="tbl_row49.bgColor='#71C1FF'" onmouseout="tbl_row49.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61730</td><td align="left">00076236</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068205</td><td align="left" nowrap="nowrap">ESKEDAR ALEBACHEW MOLALIGN</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row50" onmouseover="tbl_row50.bgColor='#71C1FF'" onmouseout="tbl_row50.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61732</td><td align="left">00076237</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068206</td><td align="left" nowrap="nowrap">HAYAT WALELIGN FELEKE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">950.00</td><td align="right">-</td><td align="right">950.00</td></tr><tr id="tbl_row51" onmouseover="tbl_row51.bgColor='#71C1FF'" onmouseout="tbl_row51.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61733</td><td align="left">00076238</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068207</td><td align="left" nowrap="nowrap">ALI LIBEN SEMBERE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">3,050.00</td><td align="right">-</td><td align="right">3,050.00</td></tr><tr id="tbl_row52" onmouseover="tbl_row52.bgColor='#71C1FF'" onmouseout="tbl_row52.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61734</td><td align="left">00076240</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068209</td><td align="left" nowrap="nowrap">SEWNET GOBENA BOGALE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row53" onmouseover="tbl_row53.bgColor='#71C1FF'" onmouseout="tbl_row53.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61735</td><td align="left">00076239</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068208</td><td align="left" nowrap="nowrap">SHIMELIS SUFA AYANO</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row54" onmouseover="tbl_row54.bgColor='#71C1FF'" onmouseout="tbl_row54.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61736</td><td align="left">00076241</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068210</td><td align="left" nowrap="nowrap">EYUOEL K/YOHANNES W/YOHANNES</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">6,200.00</td><td align="right">-</td><td align="right">6,200.00</td></tr><tr id="tbl_row55" onmouseover="tbl_row55.bgColor='#71C1FF'" onmouseout="tbl_row55.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61737</td><td align="left">00076242</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068211</td><td align="left" nowrap="nowrap">BEDILU YIBELTAL KEBEDE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">3,450.00</td><td align="right">-</td><td align="right">3,450.00</td></tr><tr id="tbl_row56" onmouseover="tbl_row56.bgColor='#71C1FF'" onmouseout="tbl_row56.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61738</td><td align="left">00076243</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068212</td><td align="left" nowrap="nowrap">FIKADE ADANE BELACHEW</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row57" onmouseover="tbl_row57.bgColor='#71C1FF'" onmouseout="tbl_row57.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61739</td><td align="left">00076244</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068213</td><td align="left" nowrap="nowrap">NEGASH DUBALE G/MEDHIN</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">1,950.00</td><td align="right">-</td><td align="right">1,950.00</td></tr><tr id="tbl_row58" onmouseover="tbl_row58.bgColor='#71C1FF'" onmouseout="tbl_row58.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61740</td><td align="left">00076245</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068214</td><td align="left" nowrap="nowrap">HANA DEMISSE SEMA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">600.00</td><td align="right">-</td><td align="right">600.00</td></tr><tr id="tbl_row59" onmouseover="tbl_row59.bgColor='#71C1FF'" onmouseout="tbl_row59.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61741</td><td align="left">00076246</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068215</td><td align="left" nowrap="nowrap">BIRHAN WOLDU ABERA</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">850.00</td><td align="right">-</td><td align="right">850.00</td></tr><tr id="tbl_row60" onmouseover="tbl_row60.bgColor='#71C1FF'" onmouseout="tbl_row60.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61742</td><td align="left">00076247</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068216</td><td align="left" nowrap="nowrap">SEWNET GOBENA BOGALE</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">4,000.00</td><td align="right">-</td><td align="right">4,000.00</td></tr><tr id="tbl_row61" onmouseover="tbl_row61.bgColor='#71C1FF'" onmouseout="tbl_row61.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61743</td><td align="left">00076248</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068217</td><td align="left" nowrap="nowrap">MAMO BEKELE WOINDIMU</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row62" onmouseover="tbl_row62.bgColor='#71C1FF'" onmouseout="tbl_row62.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61744</td><td align="left">00076249</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068218</td><td align="left" nowrap="nowrap">MARTAHA BIRRU SIMBIRO</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row63" onmouseover="tbl_row63.bgColor='#71C1FF'" onmouseout="tbl_row63.bgColor=''" bgcolor="" class="StyleReportDataTr"><td align="left">PAY-61753</td><td align="left">00076250</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068219</td><td align="left" nowrap="nowrap">AHMED ABATE SEID</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr id="tbl_row64" onmouseover="tbl_row64.bgColor='#71C1FF'" onmouseout="tbl_row64.bgColor='#F2F2F2'" bgcolor="#F2F2F2" class="StyleReportDataTr"><td align="left">PAY-61755</td><td align="left">00076251</td><td align="left" nowrap="nowrap">2026-09-29</td><td align="left" nowrap="nowrap">CSI-ST1-01-0068220</td><td align="left" nowrap="nowrap">ANWAR MUDESIR JEMAL</td><td align="left">&nbsp;</td><td align="left">STORE1</td><td align="left" nowrap="nowrap">Bereket</td><td align="right">800.00</td><td align="right">-</td><td align="right">800.00</td></tr><tr><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryInLineFooterTd">111,325.00</td><td align="right" class="StyleReportSummaryInLineFooterTd">0.00</td><td align="right" class="StyleReportSummaryInLineFooterTd">111,325.00</td></tr><tr><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">&nbsp;</td><td align="right" class="StyleReportSummaryFooterTd">111,325.00</td><td align="right" class="StyleReportSummaryFooterTd">0.00</td><td align="right" class="StyleReportSummaryFooterTd">111,325.00</td></tr> 
+ <!--# END DETAIL ROWS #--> 
+ 
+ <!--# FOOTER #-->  
+	</tbody><tfoot>
+		<tr>
+			<td colspan="11" align="right">
+			<table width="100%" border="0">
+  <tbody><tr>
+    <td align="left">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="right">&nbsp;</td>
+  </tr>
+  <tr class="StyleReportFooterNotesTd">
+    <td align="left" width="20%">2026-09-29</td>
+    <td align="center" width="60%">For Managment Purposes Only</td>
+    <td align="right" width="20%">Powered by MarakiErp(Beta) - 2012</td>
+  </tr>
+</tbody></table></td>
+		</tr>
+  </tfoot></table>
+ <!--# END FOOTER #-->
+ 
+<!--# END  REPORT DATA #--> 
+</form>
+<!--<div id="Layer2"></div>-->
+
+
+</body></html>
