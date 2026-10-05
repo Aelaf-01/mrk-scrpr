@@ -1,45 +1,125 @@
-import datetime
 import os
-import re
+import sys
+import json
+import time
+import shutil
+import argparse
+import datetime
 import requests
-from dotenv import load_dotenv
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
+# Add root directory to python path for config
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import config
 
-HOST = os.getenv("SENDER_HOST_URL", "http://192.168.1.46:5000/upload") # Web server endpoint for receiving files
+logger = config.setup_logging('maraki_sender')
 
-def get_files_to_send():
-    # Identify files for the previous date (or current date depending on cron configuration)
-    yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-    date_filter = yesterday.strftime("%Y-%m-%d")
-    
-    # As a fallback for testing today, also check today's date
-    today = datetime.datetime.now().strftime("%Y-%m-%d")
-    
-    files_to_send = []
-    for filename in os.listdir("."):
-        if (date_filter in filename or today in filename) and filename.endswith(".html"):
-            files_to_send.append(filename)
-            
-    return files_to_send
+class MarakiSender:
+    def __init__(self):
+        self.session = requests.Session()
+        retry_strategy = Retry(
+            total=5,
+            backoff_factor=2,
+            status_forcelist=[429, 500, 502, 503, 504],
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        self.session.mount("http://", adapter)
+        self.session.mount("https://", adapter)
+        
+        self.out_dir = os.path.join(os.path.dirname(__file__), "out")
+        self.sent_dir = os.path.join(os.path.dirname(__file__), "sent")
+        os.makedirs(self.out_dir, exist_ok=True)
+        os.makedirs(self.sent_dir, exist_ok=True)
+        
+        self.headers = {
+            "X-Auth": config.SHARED_SECRET,
+            "X-Client-Id": config.CLIENT_ID
+        }
 
-def send_files(files):
-    for filename in files:
-        print(f"Sending {filename} to {HOST}")
+    def get_manifests_to_send(self, target_date=None):
+        manifests = []
+        for filename in os.listdir(self.out_dir):
+            if filename.endswith(".manifest.json"):
+                if target_date and not filename.startswith(f"{target_date}.manifest"):
+                    continue
+                manifests.append(filename)
+        return manifests
+
+    def send_file(self, filepath):
+        filename = os.path.basename(filepath)
+        logger.info(f"Sending {filename} to {config.SENDER_HOST_URL}")
+        
         try:
-            with open(filename, "rb") as f:
-                files_dict = {"file": (filename, f, "text/html")}
-                response = requests.post(HOST, files=files_dict)
-                if response.status_code == 200:
-                    print(f"Successfully sent {filename}")
-                else:
-                    print(f"Failed to send {filename}: {response.status_code}")
+            with open(filepath, "rb") as f:
+                files = {"file": (filename, f, "application/octet-stream")}
+                response = self.session.post(
+                    config.SENDER_HOST_URL, 
+                    files=files, 
+                    headers=self.headers,
+                    timeout=30
+                )
+                response.raise_for_status()
+                logger.info(f"Successfully sent {filename}")
+                return True
         except Exception as e:
-            print(f"Error sending {filename}: {e}")
+            logger.error(f"Failed to send {filename}: {e}")
+            return False
+
+    def process_outbox(self, target_date=None):
+        manifests = self.get_manifests_to_send(target_date)
+        if not manifests:
+            logger.info("No manifests found in outbox.")
+            return
+
+        for manifest_file in manifests:
+            manifest_path = os.path.join(self.out_dir, manifest_file)
+            try:
+                with open(manifest_path, 'r') as f:
+                    manifest_data = json.load(f)
+            except Exception as e:
+                logger.error(f"Could not read manifest {manifest_file}: {e}")
+                continue
+
+            all_success = True
+            files_to_move = []
+            
+            # Send HTML files first
+            for item in manifest_data:
+                html_file = item["file"]
+                html_path = os.path.join(self.out_dir, html_file)
+                if not os.path.exists(html_path):
+                    logger.error(f"Missing file referenced in manifest: {html_file}")
+                    all_success = False
+                    break
+                    
+                if self.send_file(html_path):
+                    files_to_move.append(html_path)
+                else:
+                    all_success = False
+                    break
+            
+            # Send manifest last if all HTML files succeeded
+            if all_success:
+                if self.send_file(manifest_path):
+                    files_to_move.append(manifest_path)
+                    
+                    # Move to sent dir
+                    for p in files_to_move:
+                        shutil.move(p, os.path.join(self.sent_dir, os.path.basename(p)))
+                    logger.info(f"Completed sending bundle for {manifest_file}")
+                else:
+                    logger.error(f"Failed to send manifest {manifest_file}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Maraki Sender (Outbox Pattern)")
+    parser.add_argument("--date", help="Specific date to send (YYYY-MM-DD). If omitted, sends all unsent.")
+    args = parser.parse_args()
+
+    sender = MarakiSender()
+    sender.process_outbox(args.date)
+
 
 if __name__ == "__main__":
-    files = get_files_to_send()
-    if files:
-        send_files(files)
-    else:
-        print("No files found to send.")
+    main()
