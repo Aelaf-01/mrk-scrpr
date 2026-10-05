@@ -1,0 +1,40 @@
+# Environments and Secrets
+.env
+venv/
+env/
+.venv/
+
+# Python caching and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data, Text, and Documents
+*.txt
+*.csv
+*.json
+!*.manifest.json
+*.manifest.json
+
+# If you specifically want to ignore all HTML files (assuming they are generated/scraped data)
+*.html
+*_files/
+
+# Application output/working directories
+out/
+sent/
+htmls/
+output/
+pipeline.log
+.ready
+.done
+
+# Temporary setup scripts
+tools_setup.py
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
